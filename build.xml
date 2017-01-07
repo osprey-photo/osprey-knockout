@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project OspreyKnockout with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR file Export Wizard-->
+    <!--ANT 1.7 is required-->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}/_dist"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/OspreyKnockout.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="OspreyKnockout"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ jfxrt.jar junit.jar org.hamcrest.core_1.3.0.v201303031735.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <zipfileset dir="C:/Program Files/Java/jdk1.8.0_51/jre/lib/ext" includes="jfxrt.jar"/>
+            <fileset dir="${dir.buildfile}/bin"/>
+            <zipfileset dir="C:/_tools/eclipse-java-neon-M6-win32-x86_64/eclipse/plugins/org.junit_4.12.0.v201504281640" includes="junit.jar"/>
+            <zipfileset dir="C:/_tools/eclipse-java-neon-M6-win32-x86_64/eclipse/plugins" includes="org.hamcrest.core_1.3.0.v201303031735.jar"/>
+        </jar>
+    </target>
+</project>
