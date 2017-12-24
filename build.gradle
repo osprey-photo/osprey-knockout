@@ -22,7 +22,9 @@ repositories {
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile 'com.google.guava:guava:23.0'
-
+    compile "com.beust:jcommander:1.71"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.10.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.10.0'
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
 }
