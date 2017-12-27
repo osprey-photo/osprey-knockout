@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Tent CSS Boilerplate</title>
+        <meta name="description" content="A CSS survival kit. Example of framework">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="./css/tent.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-color-darker">
+       <div class="bg-color-darker">
+                <div class="container bg-color-darker">
+                    <div class="grid grid--justify-center">
+                        <div class="grid__column grid__column--6">
+                            <p>Image One</p>
+                            <img style="width: auto; height: 40vw;" src="./imgs/emmet_portrait.jpg"></img>
+                        </div>
+                        <div class="grid__column grid__column--6">
+                            <p>Image Two</p>
+                            <img style="width: auto; height: 40vw;" src="./imgs/skywalker_built on hope.jpg"></img>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="ctrl" class="container">
+                    <div class="grid margin-sm padding-sm grid--justify-center">
+                        <div class="grid__column grid__column--12">
+                        <p id="demo"></p>
+                        </div>
+                    </div>
+                  </div>
+                <div id="ctrl" class="container">
+                    <div class="grid margin-sm padding-sm grid--justify-center">
+                        <div class="grid__column grid__column--12">
+                            <a href="#" id="previous" class="button button--filled">BACK</a>
+                            <a href="#" id="next" class="button button--filled">NEXT</a>
+                        </div>
+                        <div class="grid__column grid__column--12">
+                            <a href="#" id="vone" class="button button--filled">Vote 1</a>
+                            <a href="#" id="vtwo" class="button button--filled">Vote 2</a>
+                        </div>
+                        <div class="grid__column grid__column--12">
+                            <a href="#" id="start" class="button button--filled">START</a>
+                            <a href="#" id="hello" class="button button--filled">Hello</a>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+                <script>
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =  this.responseText;
+    }
+  };
+  xhttp.open("GET", "hello", true);
+  xhttp.send();
+}
+
+var button = document.getElementById("hello");
+button.addEventListener("click",function(e){
+    console.log('hello');
+    loadDoc();
+},false);
+var button = document.getElementById("next");
+button.addEventListener("click",function(e){
+    console.log('next');
+},false);
+
+var button = document.getElementById("previous");
+button.addEventListener("click",function(e){
+    console.log('previous');
+},false);
+var button = document.getElementById("vone");
+button.addEventListener("click",function(e){
+    console.log('ONE');
+},false);
+
+var button = document.getElementById("vtwo");
+button.addEventListener("click",function(e){
+    console.log('vtwo');
+},false);
+
+var button = document.getElementById("start");
+button.addEventListener("click",function(e){
+    console.log('start');
+},false);
+                </script>
+	</body>
+</html>

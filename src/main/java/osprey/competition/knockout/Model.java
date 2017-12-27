@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 public class Model {
 
 	static String imageDir = "src.image.dir";
-
 	static String propsFile = "props.file";
 
 	Properties props;
@@ -20,15 +19,13 @@ public class Model {
 
 	public Model() throws Exception {
 		logger.info("Model <init>");
-
 	}
 
 	public void init() throws Exception {
 
 		String d = System.getProperty(propsFile);
-
 		if (d == null || d.trim().equals("")) {
-			d="./imageviewer.props";
+			d = java.nio.file.Paths.get(java.lang.System.getenv("APP_HOME"),"imageviewer.props").toString();
 			logger.info("No specified props file -D" + propsFile +" assuming "+d);
 		}
 
@@ -44,27 +41,20 @@ public class Model {
 
 	ArrayList<ImageWrapper> images;
 	int round = 0;
-
 	int currentImage = 0;
 
-	
-
 	public Round getNextRound(){
-		
 		round++;
-		
-		System.out.println(round);
+		logger.info(round);
 		
 		Round r = new Round(round);
 		r.setList(getNextRoundImages());
-		
+
 		return r;
-		
 	}
 	
-	public ArrayList<Combatants> getNextRoundImages() {
-	
 
+	private ArrayList<Combatants> getNextRoundImages() {
 		// scan the images and remove the ones that not selected
 		// need to clean out the failed images
 		for (int count = images.size() - 1; count > 0; count--) {
@@ -90,10 +80,28 @@ public class Model {
 			nextRounds.add(c);
 		}
 
+		this.currentRound = nextRounds;
+		this.currentCombatants = 0;
 		return nextRounds;
 
 	}
 
+	/**
+	 * Move to the next pair of images. 
+	 * 
+	 */
+	public Combatants moveToNext(){
+		this.currentCombatants++;
+		return this.currentRound[this.currentCombatants];
+	}
+
+	public boolean isRoundComplete(){
+		return this.currentCombatants==this.currentRound.getNumberImages();
+	}
+
+	/**
+	 * Mark an image as having not been voted in
+	 */
 	public void markAsFailed(ImageWrapper imageWrapper) throws Exception {
 		imageWrapper.success = false;
 		boolean result = images.remove(imageWrapper);
@@ -114,7 +122,6 @@ public class Model {
 		if (!isPowerOf2(files.length)) {
 			logger.info("Will need knockout round = Incorrect number of images");
 			this.round = -1;
-//			throw new Exception("Incorrect number of images :" + files.length);
 		}
 		int uid = 0;
 		logger.info("Loading files from " + d);
@@ -144,7 +151,7 @@ public class Model {
 
 		// write out a summary of all the files with author and title
 		for (ImageWrapper im : images) {
-			System.out.println(im.author+","+im.title);
+			logger.info(im.author+","+im.title);
 		}
 		
 	}
@@ -181,7 +188,6 @@ public class Model {
 	}
 
 	public double getFullSizeHeight() {
-		// TODO Auto-generated method stub
 		return Double.parseDouble(props.getProperty("fullsize.height"));
 	}
 

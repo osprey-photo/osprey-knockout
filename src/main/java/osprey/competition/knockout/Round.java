@@ -1,7 +1,6 @@
 package osprey.competition.knockout;
 
 import java.util.ArrayList;
-
 import javafx.scene.text.Text;
 
 public class Round {
@@ -14,17 +13,14 @@ public class Round {
 		return list;
 	}
 
-
 	public void setList(ArrayList<Combatants> list) {
 		this.list = list;
 	}
-
 
 	public Round(int round) {
 		this.roundNumber = round;
 	}
 
-	
 	public int getNumberImages(){
 		return list.size();
 	}

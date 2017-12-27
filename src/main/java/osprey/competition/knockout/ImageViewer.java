@@ -33,6 +33,9 @@ import javafx.stage.Stage;
 
 public class ImageViewer extends Application {
 
+	/**
+     */
+
 	public enum STATE {
 		ROUND_TITLE, FULL_IMAGE_1, FULL_IMAGE_2, VOTE, WINNER
 	};
@@ -40,61 +43,123 @@ public class ImageViewer extends Application {
 	STATE state;
 
 	Image image1, image2;
-
 	Model model;
 
-	// preload the list of
+
 	ArrayList<Combatants> list;
 	Round currentRound;
 
 	Combatants currentImages;
 	int current = 0;
 	int imagesInThisRound;
-	int currentRoundNumber = 0;
+	// int currentRoundNumber = 0;
+
+	Controller crtl;
+	ImageView selectedImage1;
 
 	private static Logger logger = Logger.getLogger(ImageViewer.class.getName());
 
+
+	public ImageViewer(Model model){
+		this.model = model;
+		this.ctrl = new Controller(){
+			public void next(){
+				switch (state) {
+					case FULL_IMAGE_1:
+						selectedImage1.setImage(currentImages.imageTwo.image);
+						state = STATE.FULL_IMAGE_2;
+						break;
+					case FULL_IMAGE_2:
+						scene.setRoot(addGridPane());
+						state = STATE.VOTE;
+						break;
+					default:
+						break;
+					}
+			}
+
+			public void back(){
+				switch (state) {
+					case FULL_IMAGE_2:
+						selectedImage1.setImage(currentImages.imageOne.image);
+						state = STATE.FULL_IMAGE_1;
+						break;
+					default:
+						break;
+					}
+			}
+		 
+			public void vote_one(){
+				switch (state) {
+					case VOTE:
+						model.markAsFailed(currentImages.imageTwo);
+						current++;
+						state = STATE.FULL_IMAGE_1;
+						scene.setRoot(getFullImageView());
+						break;
+					default:
+						break;
+					}
+			}
+		 
+			public void vote_two(){
+				switch (state) {
+					case VOTE:
+						model.markAsFailed(currentImages.imageOne);
+						current++;
+						state = STATE.FULL_IMAGE_1;
+						scene.setRoot(getFullImageView());
+						break;
+					default:
+						break;
+					}
+			}
+		 
+			public void start(){
+				switch (state) {
+					case ROUND_TITLE:
+						scene.setRoot(getFullImageView());
+						state = STATE.FULL_IMAGE_1;
+						break;
+					default:
+						break;
+					}
+			}
+
+		};
+		logger.info("new Controller created");
+	}
+
 	@Override
 	public void init() throws Exception {
-
 		super.init();
+		logger.info("init");
 
-		model = new Model();
-		model.init();
-		
 		currentRound = model.getNextRound();
-
-		list = currentRound.getList();
+		// list = currentRound.getList();
 		imagesInThisRound = currentRound.getNumberImages();
-		currentRoundNumber = 1;
-
+		// currentRoundNumber = 1;
 		state = STATE.ROUND_TITLE;
 	}
 
 	@Override
 	public void stop() throws Exception {
-		// TODO Auto-generated method stub
 		super.stop();
 	}
 
-	ImageView selectedImage1;
+	public Controller getController(){
+		return this.ctrl;
+	}
 
 	public VBox getRoundTitle() {
 		VBox root = new VBox();
+		logger.info("getRoundTtitle");
 
 		Text bwps = new Text("Bishop's Waltham\nPhotographic Society\n");
 		bwps.setFont(Font.font("Arial", FontWeight.BOLD, 60));
 		bwps.setFill(Color.WHITE);
 
 		Text chartTitle = new Text( this.currentRound.getRoundTitle() );
-//		if (imagesInThisRound == 1) {
-//			chartTitle = new Text("Final");
-//		} else if (imagesInThisRound == 2) {
-//			chartTitle = new Text("Semi-Final");
-//		} else {
-//			chartTitle = new Text("Round " + currentRoundNumber);
-//		}
-
 		chartTitle.setFont(Font.font("Arial", FontWeight.BOLD, 60));
 		chartTitle.setFill(Color.WHITE);
 
@@ -111,23 +176,24 @@ public class ImageViewer extends Application {
 
 	public VBox getFullImageView() {
 
+		logger.info("getFullImageView");
+
 		if (model.isWinner()) {
 			logger.info("WINNER IS..." + model.getWinner());
 			return getWinner();
 
-		} else if (current == imagesInThisRound) {
+		} else if (model.isRoundComplete()) {
+			logger.info("getting next round");
 			currentRound = model.getNextRound();
-			
-			list = currentRound.getList();
-//			model.getNextRoundImages();
-			imagesInThisRound = list.size();
+			// list = currentRound.getList();
+			imagesInThisRound = currentRound.size();
 			current = 0;
-			currentRoundNumber++;
+			// currentRoundNumber++;
 			state = STATE.ROUND_TITLE;
 			return getRoundTitle();
 		}
 
-		currentImages = list.get(current);
+		currentImages = model.moveToNext(); //list.get(current);
 
 		VBox root = new VBox();
 
@@ -193,55 +259,15 @@ public class ImageViewer extends Application {
 				public void handle(KeyEvent ke) {
 					try {
 						KeyCode kc = ke.getCode();
-						// System.out.println(kc);
+					
 						if (kc.equals(KeyCode.LEFT)) {
-
-							switch (state) {
-							case FULL_IMAGE_2:
-								selectedImage1.setImage(currentImages.imageOne.image);
-								state = STATE.FULL_IMAGE_1;
-								break;
-							default:
-								break;
-							}
-
+							ctrl.back();
 						} else if (kc.equals(KeyCode.RIGHT)) {
-							switch (state) {
-							case FULL_IMAGE_1:
-								selectedImage1.setImage(currentImages.imageTwo.image);
-								state = STATE.FULL_IMAGE_2;
-								break;
-							case FULL_IMAGE_2:
-								scene.setRoot(addGridPane());
-								state = STATE.VOTE;
-								break;
-							default:
-								break;
-							}
-
+							ctrl.next();
 						} else if (kc.equals(KeyCode.DIGIT1)) {
-							switch (state) {
-							case VOTE:
-								model.markAsFailed(currentImages.imageTwo);
-								current++;
-								state = STATE.FULL_IMAGE_1;
-								scene.setRoot(getFullImageView());
-								break;
-							default:
-								break;
-							}
-
+							ctrl.vote_one();
 						} else if (kc.equals(KeyCode.DIGIT2)) {
-							switch (state) {
-							case VOTE:
-								model.markAsFailed(currentImages.imageOne);
-								current++;
-								state = STATE.FULL_IMAGE_1;
-								scene.setRoot(getFullImageView());
-								break;
-							default:
-								break;
-							}
+							ctrl.vote_two();
 						} else if (kc.equals(KeyCode.M)) {
 							switch (state) {
 							case FULL_IMAGE_2:
@@ -253,14 +279,7 @@ public class ImageViewer extends Application {
 							}
 
 						} else if (kc.equals(KeyCode.S)) {
-							switch (state) {
-							case ROUND_TITLE:
-								scene.setRoot(getFullImageView());
-								state = STATE.FULL_IMAGE_1;
-								break;
-							default:
-								break;
-							}
+							ctrl.start();
 						}
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
@@ -322,14 +341,9 @@ public class ImageViewer extends Application {
 		return grid;
 	}
 
-	public static void main(String[] args) {
-		launch(args);
-	}
 }
 
 /**
- *
- * @author akouznet
  */
 class ImageViewPane extends Region {
 
