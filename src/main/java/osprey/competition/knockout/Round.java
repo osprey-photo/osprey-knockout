@@ -13,6 +13,10 @@ public class Round {
 		return list;
 	}
 
+	public Combatants get(int index){
+		return list.get(index);
+	}
+
 	public void setList(ArrayList<Combatants> list) {
 		this.list = list;
 	}
@@ -21,7 +25,7 @@ public class Round {
 		this.roundNumber = round;
 	}
 
-	public int getNumberImages(){
+	public int getNumberCombatants(){
 		return list.size();
 	}
 	
@@ -29,9 +33,9 @@ public class Round {
 		
 		if (roundNumber == 0){
 			return "Elimination";
-		} else if (getNumberImages() == 1) {
+		} else if (getNumberCombatants() == 1) {
 			return "Final";
-		} else if (getNumberImages() == 2) {
+		} else if (getNumberCombatants() == 2) {
 			return "Semi-Final";
 		} else {
 			return ("Round " + roundNumber);

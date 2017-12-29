@@ -1,5 +1,7 @@
 package osprey.competition.knockout;
 
+import osprey.competition.rest.*;
+
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -31,11 +33,10 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class ImageViewer extends Application {
+public class ImageViewer extends Application implements Controller {
 
 	/**
-     */
-
+	 */
 	public enum STATE {
 		ROUND_TITLE, FULL_IMAGE_1, FULL_IMAGE_2, VOTE, WINNER
 	};
@@ -45,89 +46,18 @@ public class ImageViewer extends Application {
 	Image image1, image2;
 	Model model;
 
-
-	ArrayList<Combatants> list;
 	Round currentRound;
 
 	Combatants currentImages;
-	int current = 0;
-	int imagesInThisRound;
-	// int currentRoundNumber = 0;
-
-	Controller crtl;
+	Scene scene;
 	ImageView selectedImage1;
+	Server restServer;
 
 	private static Logger logger = Logger.getLogger(ImageViewer.class.getName());
 
+	public ImageViewer() {
 
-	public ImageViewer(Model model){
-		this.model = model;
-		this.ctrl = new Controller(){
-			public void next(){
-				switch (state) {
-					case FULL_IMAGE_1:
-						selectedImage1.setImage(currentImages.imageTwo.image);
-						state = STATE.FULL_IMAGE_2;
-						break;
-					case FULL_IMAGE_2:
-						scene.setRoot(addGridPane());
-						state = STATE.VOTE;
-						break;
-					default:
-						break;
-					}
-			}
-
-			public void back(){
-				switch (state) {
-					case FULL_IMAGE_2:
-						selectedImage1.setImage(currentImages.imageOne.image);
-						state = STATE.FULL_IMAGE_1;
-						break;
-					default:
-						break;
-					}
-			}
-		 
-			public void vote_one(){
-				switch (state) {
-					case VOTE:
-						model.markAsFailed(currentImages.imageTwo);
-						current++;
-						state = STATE.FULL_IMAGE_1;
-						scene.setRoot(getFullImageView());
-						break;
-					default:
-						break;
-					}
-			}
-		 
-			public void vote_two(){
-				switch (state) {
-					case VOTE:
-						model.markAsFailed(currentImages.imageOne);
-						current++;
-						state = STATE.FULL_IMAGE_1;
-						scene.setRoot(getFullImageView());
-						break;
-					default:
-						break;
-					}
-			}
-		 
-			public void start(){
-				switch (state) {
-					case ROUND_TITLE:
-						scene.setRoot(getFullImageView());
-						state = STATE.FULL_IMAGE_1;
-						break;
-					default:
-						break;
-					}
-			}
-
-		};
-		logger.info("new Controller created");
+		logger.info("<init>");
 	}
 
 	@Override
@@ -135,9 +65,16 @@ public class ImageViewer extends Application {
 		super.init();
 		logger.info("init");
 
+		// create the model
+		this.model = new Model();
+		model.init();
+
+		// get the controller, and start up the rest server
+		restServer = new Server((Controller)this, model);
+		restServer.go();
+
 		currentRound = model.getNextRound();
-		// list = currentRound.getList();
-		imagesInThisRound = currentRound.getNumberImages();
+		
 		// currentRoundNumber = 1;
 		state = STATE.ROUND_TITLE;
 	}
@@ -145,10 +82,6 @@ public class ImageViewer extends Application {
 	@Override
 	public void stop() throws Exception {
 		super.stop();
-	}
-
-	public Controller getController(){
-		return this.ctrl;
 	}
 
 	public VBox getRoundTitle() {
@@ -159,7 +92,7 @@ public class ImageViewer extends Application {
 		bwps.setFont(Font.font("Arial", FontWeight.BOLD, 60));
 		bwps.setFill(Color.WHITE);
 
-		Text chartTitle = new Text( this.currentRound.getRoundTitle() );
+		Text chartTitle = new Text(this.currentRound.getRoundTitle());
 		chartTitle.setFont(Font.font("Arial", FontWeight.BOLD, 60));
 		chartTitle.setFill(Color.WHITE);
 
@@ -176,7 +109,7 @@ public class ImageViewer extends Application {
 
 	public VBox getFullImageView() {
 
-		logger.info("getFullImageView");
+		logger.info("> getFullImageView");
 
 		if (model.isWinner()) {
 			logger.info("WINNER IS..." + model.getWinner());
@@ -185,16 +118,15 @@ public class ImageViewer extends Application {
 		} else if (model.isRoundComplete()) {
 			logger.info("getting next round");
 			currentRound = model.getNextRound();
-			// list = currentRound.getList();
-			imagesInThisRound = currentRound.size();
-			current = 0;
-			// currentRoundNumber++;
+
+
 			state = STATE.ROUND_TITLE;
 			return getRoundTitle();
 		}
 
+		
 		currentImages = model.moveToNext(); //list.get(current);
-
+		logger.info("moving to the next images "+currentImages);
 		VBox root = new VBox();
 
 		selectedImage1 = new ImageView();
@@ -205,7 +137,7 @@ public class ImageViewer extends Application {
 
 		root.setAlignment(Pos.CENTER);
 		root.getChildren().addAll(selectedImage1);
-
+		logger.info("< getFullImageView");
 		return root;
 	}
 
@@ -228,7 +160,7 @@ public class ImageViewer extends Application {
 		chartTitle.setFont(Font.font("Arial", FontWeight.BOLD, 60));
 		chartTitle.setFill(Color.WHITE);
 
-		Text subTitle = new Text(winner.author+" - " + winner.title);
+		Text subTitle = new Text(winner.author + " - " + winner.title);
 		subTitle.setFont(Font.font("Arial", FontWeight.BOLD, 30));
 		subTitle.setFill(Color.WHITE);
 
@@ -245,7 +177,7 @@ public class ImageViewer extends Application {
 			stage.setTitle("Image Viewer");
 			stage.setWidth(800);
 			stage.setHeight(800);
-			Scene scene = new Scene(new Group());
+			scene = new Scene(new Group());
 
 			scene.setFill(Color.BLACK);
 			scene.setRoot(getRoundTitle());
@@ -259,15 +191,15 @@ public class ImageViewer extends Application {
 				public void handle(KeyEvent ke) {
 					try {
 						KeyCode kc = ke.getCode();
-					
+
 						if (kc.equals(KeyCode.LEFT)) {
-							ctrl.back();
+							back();
 						} else if (kc.equals(KeyCode.RIGHT)) {
-							ctrl.next();
+							next();
 						} else if (kc.equals(KeyCode.DIGIT1)) {
-							ctrl.vote_one();
+							vote_one();
 						} else if (kc.equals(KeyCode.DIGIT2)) {
-							ctrl.vote_two();
+							vote_two();
 						} else if (kc.equals(KeyCode.M)) {
 							switch (state) {
 							case FULL_IMAGE_2:
@@ -279,7 +211,7 @@ public class ImageViewer extends Application {
 							}
 
 						} else if (kc.equals(KeyCode.S)) {
-							ctrl.start();
+							start();
 						}
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
@@ -341,55 +273,68 @@ public class ImageViewer extends Application {
 		return grid;
 	}
 
-}
+	// controller interface methods
 
-/**
- */
-class ImageViewPane extends Region {
-
-	private ObjectProperty<ImageView> imageViewProperty = new SimpleObjectProperty<ImageView>();
-
-	public ObjectProperty<ImageView> imageViewProperty() {
-		return imageViewProperty;
-	}
-
-	public ImageView getImageView() {
-		return imageViewProperty.get();
-	}
-
-	public void setImageView(ImageView imageView) {
-		this.imageViewProperty.set(imageView);
-	}
-
-	public ImageViewPane() {
-		this(new ImageView());
-	}
-
-	@Override
-	protected void layoutChildren() {
-		ImageView imageView = imageViewProperty.get();
-		if (imageView != null) {
-
-			imageView.setFitWidth(getWidth());
-			imageView.setFitHeight(getHeight());
-			layoutInArea(imageView, 0, 0, getWidth(), getHeight(), 0, HPos.CENTER, VPos.CENTER);
+	public void next() {
+		switch (state) {
+		case FULL_IMAGE_1:
+			selectedImage1.setImage(currentImages.imageTwo.image);
+			state = STATE.FULL_IMAGE_2;
+			break;
+		case FULL_IMAGE_2:
+			scene.setRoot(addGridPane());
+			state = STATE.VOTE;
+			break;
+		default:
+			break;
 		}
-		super.layoutChildren();
 	}
 
-	public ImageViewPane(ImageView imageView) {
-		imageViewProperty.addListener(new ChangeListener<ImageView>() {
-
-			@Override
-			public void changed(ObservableValue<? extends ImageView> arg0, ImageView oldIV, ImageView newIV) {
-				if (oldIV != null) {
-					getChildren().remove(oldIV);
-				}
-				if (newIV != null) {
-					getChildren().add(newIV);
-				}
-			}
-		});
-		this.imageViewProperty.set(imageView);
+	public void back() {
+		switch (state) {
+		case FULL_IMAGE_2:
+			selectedImage1.setImage(currentImages.imageOne.image);
+			state = STATE.FULL_IMAGE_1;
+			break;
+		default:
+			break;
+		}
 	}
+
+	public void vote_one() {
+		switch (state) {
+		case VOTE:
+			model.markAsFailed(currentImages.imageTwo);
+			state = STATE.FULL_IMAGE_1;
+			scene.setRoot(getFullImageView());
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void vote_two() {
+		switch (state) {
+		case VOTE:
+			model.markAsFailed(currentImages.imageOne);
+	
+			state = STATE.FULL_IMAGE_1;
+			scene.setRoot(getFullImageView());
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void start() {
+		switch (state) {
+		case ROUND_TITLE:
+			scene.setRoot(getFullImageView());
+			state = STATE.FULL_IMAGE_1;
+			break;
+		default:
+			break;
+		}
+	}
+
 }

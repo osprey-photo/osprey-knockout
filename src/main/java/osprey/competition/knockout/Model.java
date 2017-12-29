@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Properties;
 import java.util.logging.Logger;
+import java.nio.file.*;
 
 public class Model {
 
@@ -21,6 +23,10 @@ public class Model {
 		logger.info("Model <init>");
 	}
 
+	Round currentRound;
+	int currentCombatantsIndex;
+
+	
 	public void init() throws Exception {
 
 		String d = System.getProperty(propsFile);
@@ -43,18 +49,32 @@ public class Model {
 	int round = 0;
 	int currentImage = 0;
 
+
+	public Round getCurrentRound(){
+		return this.currentRound;
+	}
+
+	public int getCurrentIndex(){
+		return this.currentCombatantsIndex;
+	}
+
 	public Round getNextRound(){
+		logger.info("> getNextRound");
 		round++;
-		logger.info(round);
+		roundDone = false;
+		logger.info("current round (zero based)="+round);
 		
 		Round r = new Round(round);
 		r.setList(getNextRoundImages());
-
+		this.currentRound = r;
+		this.currentCombatantsIndex = -1;
+		logger.info("< getNextRound");
 		return r;
 	}
 	
 
 	private ArrayList<Combatants> getNextRoundImages() {
+		logger.info("> getNextRoundImages ");
 		// scan the images and remove the ones that not selected
 		// need to clean out the failed images
 		for (int count = images.size() - 1; count > 0; count--) {
@@ -62,6 +82,8 @@ public class Model {
 				images.remove(count);
 			}
 		}
+		logger.info("image list size "+images.size());
+		
 		
 		// mix things up a bits
 		Collections.shuffle(images);
@@ -71,6 +93,7 @@ public class Model {
 		// need to work out how many images to get in this round
 		int numberImages = images.size();
 		int numberToTrim = numberImages - hob(numberImages);
+		logger.info("number to trim is "+numberToTrim);
 		
 		int numberThisRound = (numberToTrim==0) ? numberImages : (numberToTrim*2);
 		logger.info("number this round "+numberThisRound);
@@ -79,34 +102,37 @@ public class Model {
 			Combatants c = new Combatants(images.get(loop), images.get(loop + 1));
 			nextRounds.add(c);
 		}
+		logger.info("number in this new round is "+nextRounds.size());
 
-		this.currentRound = nextRounds;
-		this.currentCombatants = 0;
+		logger.info("< getNextRoundImages ");
 		return nextRounds;
-
 	}
+	boolean roundDone=false;
 
 	/**
 	 * Move to the next pair of images. 
 	 * 
 	 */
 	public Combatants moveToNext(){
-		this.currentCombatants++;
-		return this.currentRound[this.currentCombatants];
+		this.currentCombatantsIndex++;
+		roundDone = ((currentCombatantsIndex+1)==this.currentRound.getNumberCombatants());
+		return this.currentRound.get(this.currentCombatantsIndex);
 	}
 
 	public boolean isRoundComplete(){
-		return this.currentCombatants==this.currentRound.getNumberImages();
+		logger.info("Current index = "+this.currentCombatantsIndex+" round number="+this.currentRound.getNumberCombatants());
+		return (roundDone);
 	}
 
 	/**
 	 * Mark an image as having not been voted in
 	 */
-	public void markAsFailed(ImageWrapper imageWrapper) throws Exception {
+	public void markAsFailed(ImageWrapper imageWrapper)  {
 		imageWrapper.success = false;
 		boolean result = images.remove(imageWrapper);
+		System.out.println(images);
 		if (!result) {
-			throw new Exception("Image not in list");
+			throw new RuntimeException("Image not in list");
 		}
 	}
 
@@ -118,6 +144,15 @@ public class Model {
 		}
 
 		String files[] = new File(d).list(new OnlyJpgs());
+		String dest = java.nio.file.Paths.get(java.lang.System.getenv("APP_HOME"),"public","imgs").toString();
+		// copy them to the local cache
+
+		//overwrite existing file, if exists
+		CopyOption[] options = new CopyOption[]{
+		  StandardCopyOption.REPLACE_EXISTING,
+		  StandardCopyOption.COPY_ATTRIBUTES
+		}; 
+
 
 		if (!isPowerOf2(files.length)) {
 			logger.info("Will need knockout round = Incorrect number of images");
@@ -128,7 +163,11 @@ public class Model {
 
 		for (String f : files) {
 			try {
-				ImageWrapper im = new ImageWrapper(new File(d, f));
+				Path from = new File(d,f).toPath();
+				Path to = new File(dest,f).toPath();
+				Files.copy(from,to,options);
+
+				ImageWrapper im = new ImageWrapper(new File(dest, f));
 				im.uid = uid++;
 
 				int i0 = f.indexOf(".");

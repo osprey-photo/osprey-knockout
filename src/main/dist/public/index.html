@@ -15,11 +15,11 @@
                     <div class="grid grid--justify-center">
                         <div class="grid__column grid__column--6">
                             <p>Image One</p>
-                            <img style="width: auto; height: 40vw;" src="./imgs/emmet_portrait.jpg"></img>
+                            <img id="imageone" style="width: auto; height: 40vw;" src="./imgs/emmet_portrait.jpg"></img>
                         </div>
                         <div class="grid__column grid__column--6">
                             <p>Image Two</p>
-                            <img style="width: auto; height: 40vw;" src="./imgs/skywalker_built on hope.jpg"></img>
+                            <img id="imagetwo" style="width: auto; height: 40vw;" src="./imgs/skywalker_built on hope.jpg"></img>
                         </div>
                     </div>
 
@@ -66,29 +66,90 @@ function loadDoc() {
 var button = document.getElementById("hello");
 button.addEventListener("click",function(e){
     console.log('hello');
-    loadDoc();
+    getImages();
 },false);
+
+
+function getImages() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var json = JSON.parse(this.responseText);
+        // need to get the base filenames
+        var fileone = json.one.basename;
+        var filetwo = json.two.basename;
+      document.getElementById("imageone").src = './imgs/'+fileone;
+      document.getElementById("imagetwo").src = './imgs/'+filetwo
+    }
+  };
+  xhttp.open("GET", "imagesvote", true);
+  xhttp.send();
+}
+
+function moveImages(direction) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        console.log("Move images done");
+    }
+  };
+  xhttp.open("POST", "imagesvote", true);
+  var move = JSON.stringify({ move: direction});
+  xhttp.send(move);
+}
+
+function voteOnImages(winner) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        console.log("Vote on images done");
+        getImages();
+    }
+  };
+  xhttp.open("PUT", "imagesvote", true);
+  var move = JSON.stringify({ vote: winner});
+  xhttp.send(move);
+}
+
+
+function start() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        console.log("Start done");
+    }
+  };
+  xhttp.open("PUT", "rounds", true);
+  
+  xhttp.send();
+}
+
 var button = document.getElementById("next");
 button.addEventListener("click",function(e){
+    moveImages('next');
     console.log('next');
 },false);
 
 var button = document.getElementById("previous");
 button.addEventListener("click",function(e){
+    moveImages('previous');
     console.log('previous');
 },false);
 var button = document.getElementById("vone");
 button.addEventListener("click",function(e){
+    voteOnImages('one');
     console.log('ONE');
 },false);
 
 var button = document.getElementById("vtwo");
 button.addEventListener("click",function(e){
+    voteOnImages('two');
     console.log('vtwo');
 },false);
 
 var button = document.getElementById("start");
 button.addEventListener("click",function(e){
+    start();
     console.log('start');
 },false);
                 </script>

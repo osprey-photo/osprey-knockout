@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 public class ImageWrapper {
 
 	String filename;
+	String basename;
 	int uid;
 	String title;
 	String author;
@@ -16,12 +17,28 @@ public class ImageWrapper {
 	Image image;
 	
 	boolean success = true;
+
+	public String getBasename(){
+		return this.basename;
+	}
+
+	public String getFilename(){
+		return this.filename;
+	}
+
+	public String getTitle(){
+		return this.title;
+	}
+
+	public String getAuthor(){
+		return this.author;
+	}
 	
 	private static Logger logger = Logger.getLogger(ImageWrapper.class.getName());
 	
 	public ImageWrapper(File filename) throws Exception{
 		this.filename = filename.getAbsolutePath();
-		
+		this.basename = filename.getName();
 		logger.info("Loading for "+filename);
 		FileInputStream fis = new FileInputStream(filename);
 		image = new Image(fis,1400,1050,true,false);
@@ -29,7 +46,7 @@ public class ImageWrapper {
 	}
 	
 	public String toString(){
-		return filename;
+		return basename+":"+success;
 	}
 
 	@Override
