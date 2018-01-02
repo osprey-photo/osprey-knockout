@@ -131,8 +131,12 @@ public class ImageViewer extends Application implements Controller {
 
 		selectedImage1 = new ImageView();
 		selectedImage1.setPreserveRatio(true);
-		selectedImage1.setFitWidth(model.getFullSizeWidth());
-		selectedImage1.setFitHeight(model.getFullSizeHeight());
+		
+		if (currentImages.imageOne.getRatio()>=1.0){
+			selectedImage1.setFitHeight(model.getFullSizeHeight());
+		}else {
+			selectedImage1.setFitWidth(model.getFullSizeWidth());
+		}
 		selectedImage1.setImage(currentImages.imageOne.image);
 
 		root.setAlignment(Pos.CENTER);

@@ -10,12 +10,12 @@
         <link href="./css/tent.min.css" rel="stylesheet">
     </head>
     <body class="bg-color-darker">
-       <div class="bg-color-darker">
-                <div class="container bg-color-darker">
+          <div class="container.fluid bg-color-darker">
+                <div class="container.fluid bg-color-darker">
                     <div class="grid grid--justify-center">
                         <div class="grid__column grid__column--6">
                             <p>Image One</p>
-                            <img id="imageone" style="width: auto; height: 40vw;" src="./imgs/emmet_portrait.jpg"></img>
+                            <img id="imageone" style="width: auto; height: 40vw;" src="./imgs/skywalker_built on hope.jpg"></img>
                         </div>
                         <div class="grid__column grid__column--6">
                             <p>Image Two</p>
@@ -24,32 +24,47 @@
                     </div>
 
                 </div>
-                <div id="ctrl" class="container">
-                    <div class="grid margin-sm padding-sm grid--justify-center">
-                        <div class="grid__column grid__column--12">
-                        <p id="demo"></p>
-                        </div>
-                    </div>
-                  </div>
-                <div id="ctrl" class="container">
-                    <div class="grid margin-sm padding-sm grid--justify-center">
-                        <div class="grid__column grid__column--12">
-                            <a href="#" id="previous" class="button button--filled">BACK</a>
-                            <a href="#" id="next" class="button button--filled">NEXT</a>
-                        </div>
-                        <div class="grid__column grid__column--12">
-                            <a href="#" id="vone" class="button button--filled">Vote 1</a>
-                            <a href="#" id="vtwo" class="button button--filled">Vote 2</a>
-                        </div>
-                        <div class="grid__column grid__column--12">
-                            <a href="#" id="start" class="button button--filled">START</a>
-                            <a href="#" id="hello" class="button button--filled">Hello</a>
-                        </div>
-                        </div>
-                    </div>
 
+                <div id="ctrl" class="container.fluid">
+                  <div class="margin-sm margin-y">
+                        <div class="grid grid--justify-center ">
+                            <div class="grid__column grid__column--6">
+                                <a href="#" id="previous" class="button button--filled button--sm">BACK</a>
+                            </div>
+                            <div class="grid__column grid__column--6">
+                                <a href="#" id="next" class="button button--filled button--sm">NEXT</a>
+                            </div>
+                        </div>
+                        <div class="grid  grid--justify-center">
+                            <div class="grid__column grid__column--6">
+                                <a href="#" id="vone" class="button button--filled button--sm"># 1</a>
+                            </div>
+                            <div class="grid__column grid__column--6">
+                                <a href="#" id="vtwo" class="button button--filled button--sm "># 2</a>
+                            </div>
+                        </div>
+                        <div class="grid grid--justify-center">                      
+                            <div class="grid__column grid__column--6">
+                                <a href="#" id="start" class="button button--filled button--sm">START</a>
+                            </div>
+                            <div class="grid__column grid__column--6">
+                                <a href="#" id="hello" class="button button--filled">Refresh</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
+
+                <div class="container.fluid">
+                    <div class="margin-sm margin-y">
+                        <div class="grid grid--justify-center ">
+                            <div class="grid__column grid__column--12">
+                                <p id="status" class="color-secondary"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+
+            </div>
                 <script>
 
 function loadDoc() {
@@ -65,7 +80,7 @@ function loadDoc() {
 
 var button = document.getElementById("hello");
 button.addEventListener("click",function(e){
-    console.log('hello');
+     document.getElementById("status").innerHTML ='hello';
     getImages();
 },false);
 
@@ -79,7 +94,7 @@ function getImages() {
         var fileone = json.one.basename;
         var filetwo = json.two.basename;
       document.getElementById("imageone").src = './imgs/'+fileone;
-      document.getElementById("imagetwo").src = './imgs/'+filetwo
+      document.getElementById("imagetwo").src = './imgs/'+filetwo;
     }
   };
   xhttp.open("GET", "imagesvote", true);
@@ -90,7 +105,7 @@ function moveImages(direction) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        console.log("Move images done");
+         document.getElementById("status").innerHTML ="Move images done";
     }
   };
   xhttp.open("POST", "imagesvote", true);
@@ -102,7 +117,7 @@ function voteOnImages(winner) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        console.log("Vote on images done");
+         document.getElementById("status").innerHTML ="Vote on images done";
         getImages();
     }
   };
@@ -116,7 +131,8 @@ function start() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        console.log("Start done");
+         document.getElementById("status").innerHTML ="Start done";
+        getImages();
     }
   };
   xhttp.open("PUT", "rounds", true);
@@ -127,31 +143,32 @@ function start() {
 var button = document.getElementById("next");
 button.addEventListener("click",function(e){
     moveImages('next');
-    console.log('next');
+    document.getElementById("status").innerHTML ='next';
 },false);
 
 var button = document.getElementById("previous");
 button.addEventListener("click",function(e){
     moveImages('previous');
-    console.log('previous');
+    document.getElementById("status").innerHTML ='previous';
 },false);
 var button = document.getElementById("vone");
 button.addEventListener("click",function(e){
     voteOnImages('one');
-    console.log('ONE');
+    document.getElementById("status").innerHTML ='ONE';
 },false);
 
 var button = document.getElementById("vtwo");
 button.addEventListener("click",function(e){
     voteOnImages('two');
-    console.log('vtwo');
+    document.getElementById("status").innerHTML ='vtwo';
 },false);
 
 var button = document.getElementById("start");
 button.addEventListener("click",function(e){
     start();
-    console.log('start');
+    document.getElementById("status").innerHTML ='start';
 },false);
+
                 </script>
 	</body>
 </html>

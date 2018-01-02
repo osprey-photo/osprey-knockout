@@ -18,6 +18,10 @@ public class ImageWrapper {
 	
 	boolean success = true;
 
+	public double getRatio(){
+		return image.getHeight()/image.getWidth();
+	}
+	
 	public String getBasename(){
 		return this.basename;
 	}

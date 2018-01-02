@@ -176,7 +176,7 @@ public class Model {
 				
 				im.title = f.substring(i1 + 1, i0).trim();
 				im.author = f.substring(0, i1).trim();
-
+				logger.info("Image ration = "+im.getRatio());
 				images.add(im);
 			} catch (Exception e) {
 				logger.warning(e.getMessage() + ":" + f);
