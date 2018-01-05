@@ -130,19 +130,22 @@ public class ImageViewer extends Application implements Controller {
 		VBox root = new VBox();
 
 		selectedImage1 = new ImageView();
-		selectedImage1.setPreserveRatio(true);
-		
-		if (currentImages.imageOne.getRatio()>=1.0){
-			selectedImage1.setFitHeight(model.getFullSizeHeight());
-		}else {
-			selectedImage1.setFitWidth(model.getFullSizeWidth());
-		}
-		selectedImage1.setImage(currentImages.imageOne.image);
+		_setImg(currentImages.imageOne);		
 
 		root.setAlignment(Pos.CENTER);
 		root.getChildren().addAll(selectedImage1);
 		logger.info("< getFullImageView");
 		return root;
+	}
+
+	private void _setImg(ImageWrapper wrapper){
+		selectedImage1.setImage(wrapper.image);
+		if (wrapper.getRatio()>=1.0){			
+			selectedImage1.setFitHeight(model.getFullSizeHeight());
+		}else {
+			selectedImage1.setFitWidth(model.getFullSizeWidth());
+		}
+		selectedImage1.setPreserveRatio(true);
 	}
 
 	private VBox getWinner() {
@@ -282,7 +285,8 @@ public class ImageViewer extends Application implements Controller {
 	public void next() {
 		switch (state) {
 		case FULL_IMAGE_1:
-			selectedImage1.setImage(currentImages.imageTwo.image);
+			// selectedImage1.setImage(currentImages.imageTwo.image);
+			_setImg(currentImages.imageTwo);
 			state = STATE.FULL_IMAGE_2;
 			break;
 		case FULL_IMAGE_2:
@@ -297,7 +301,8 @@ public class ImageViewer extends Application implements Controller {
 	public void back() {
 		switch (state) {
 		case FULL_IMAGE_2:
-			selectedImage1.setImage(currentImages.imageOne.image);
+			// selectedImage1.setImage(currentImages.imageOne.image);
+			_setImg(currentImages.imageOne);
 			state = STATE.FULL_IMAGE_1;
 			break;
 		default:
