@@ -19,6 +19,11 @@ repositories {
     jcenter()
 }
 
+compileJava   {
+  sourceCompatibility = '1.8'
+  targetCompatibility = '1.8'
+}
+
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile "org.slf4j:slf4j-simple:1.7.21"
@@ -30,8 +35,17 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.10.0'
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+    implementation 'io.nayuki:qrcodegen:1.4.0'
+}
+
+applicationDefaultJvmArgs = ["-Dapp.home=MY_APP_HOME"]
+
+startScripts {
+    doLast {
+        unixScript.text = unixScript.text.replace('MY_APP_HOME', '\$APP_HOME') 
+        windowsScript.text = windowsScript.text.replace('MY_APP_HOME', '%~dp0..')
+    }
 }
 
 // Define the main class for the application
 mainClassName = 'App'
-

@@ -5,6 +5,8 @@ import spark.*;
 import java.util.logging.Logger;
 import java.util.*;
 import jodd.json.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import static spark.Spark.*;
 
 public class Server {
@@ -20,6 +22,20 @@ public class Server {
        
         this.model = model;
         this.ctrl = ctrl;
+
+        InetAddress ip;
+        String hostname;
+        try {
+            ip = InetAddress.getLocalHost();
+            logger.info("Your current IP address : " + ip.getHostAddress());
+      
+ 
+        } catch (UnknownHostException e) {
+            logger.severe(e.getLocalizedMessage());
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     public void go() {

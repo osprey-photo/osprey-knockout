@@ -70,11 +70,11 @@ public class ImageViewer extends Application implements Controller {
 		model.init();
 
 		// get the controller, and start up the rest server
-		restServer = new Server((Controller)this, model);
+		restServer = new Server((Controller) this, model);
 		restServer.go();
 
 		currentRound = model.getNextRound();
-		
+
 		// currentRoundNumber = 1;
 		state = STATE.ROUND_TITLE;
 	}
@@ -119,18 +119,16 @@ public class ImageViewer extends Application implements Controller {
 			logger.info("getting next round");
 			currentRound = model.getNextRound();
 
-
 			state = STATE.ROUND_TITLE;
 			return getRoundTitle();
 		}
 
-		
-		currentImages = model.moveToNext(); //list.get(current);
-		logger.info("moving to the next images "+currentImages);
+		currentImages = model.moveToNext(); // list.get(current);
+		logger.info("moving to the next images " + currentImages);
 		VBox root = new VBox();
 
 		selectedImage1 = new ImageView();
-		_setImg(currentImages.imageOne);		
+		_setImg(currentImages.imageOne);
 
 		root.setAlignment(Pos.CENTER);
 		root.getChildren().addAll(selectedImage1);
@@ -138,11 +136,11 @@ public class ImageViewer extends Application implements Controller {
 		return root;
 	}
 
-	private void _setImg(ImageWrapper wrapper){
+	private void _setImg(ImageWrapper wrapper) {
 		selectedImage1.setImage(wrapper.image);
-		if (wrapper.getRatio()>=1.0){			
+		if (wrapper.getRatio() >= 1.0) {
 			selectedImage1.setFitHeight(model.getFullSizeHeight());
-		}else {
+		} else {
 			selectedImage1.setFitWidth(model.getFullSizeWidth());
 		}
 		selectedImage1.setPreserveRatio(true);
@@ -326,7 +324,7 @@ public class ImageViewer extends Application implements Controller {
 		switch (state) {
 		case VOTE:
 			model.markAsFailed(currentImages.imageOne);
-	
+
 			state = STATE.FULL_IMAGE_1;
 			scene.setRoot(getFullImageView());
 			break;

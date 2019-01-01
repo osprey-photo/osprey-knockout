@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -17,22 +16,29 @@ public class Model {
 
 	Properties props;
 
+	// Application home directory
+	String apphome;
+
+	Round currentRound;
+	int currentCombatantsIndex;
+
+	// logger for debug output
 	private static Logger logger = Logger.getLogger(Model.class.getName());
 
 	public Model() throws Exception {
 		logger.info("Model <init>");
 	}
 
-	Round currentRound;
-	int currentCombatantsIndex;
-
-	
 	public void init() throws Exception {
-
+		apphome = System.getProperty("app.home");
+		if (apphome == null || apphome.trim().equals("") || apphome.equals("MY_APP_HOME")) {
+			apphome = ".";
+		}
 		String d = System.getProperty(propsFile);
 		if (d == null || d.trim().equals("")) {
-			d = java.nio.file.Paths.get(java.lang.System.getenv("APP_HOME"),"imageviewer.props").toString();
-			logger.info("No specified props file -D" + propsFile +" assuming "+d);
+			d = java.nio.file.Paths.get(apphome, "imageviewer.props").toString();
+			logger.info("No specified props file -D" + propsFile + " assuming " + d);
+
 		}
 
 		props = new Properties();
@@ -49,21 +55,20 @@ public class Model {
 	int round = 0;
 	int currentImage = 0;
 
-
-	public Round getCurrentRound(){
+	public Round getCurrentRound() {
 		return this.currentRound;
 	}
 
-	public int getCurrentIndex(){
+	public int getCurrentIndex() {
 		return this.currentCombatantsIndex;
 	}
 
-	public Round getNextRound(){
+	public Round getNextRound() {
 		logger.info("> getNextRound");
 		round++;
 		roundDone = false;
-		logger.info("current round (zero based)="+round);
-		
+		logger.info("current round (zero based)=" + round);
+
 		Round r = new Round(round);
 		r.setList(getNextRoundImages());
 		this.currentRound = r;
@@ -71,7 +76,6 @@ public class Model {
 		logger.info("< getNextRound");
 		return r;
 	}
-	
 
 	private ArrayList<Combatants> getNextRoundImages() {
 		logger.info("> getNextRoundImages ");
@@ -82,9 +86,8 @@ public class Model {
 				images.remove(count);
 			}
 		}
-		logger.info("image list size "+images.size());
-		
-		
+		logger.info("image list size " + images.size());
+
 		// mix things up a bits
 		Collections.shuffle(images);
 
@@ -93,41 +96,43 @@ public class Model {
 		// need to work out how many images to get in this round
 		int numberImages = images.size();
 		int numberToTrim = numberImages - hob(numberImages);
-		logger.info("number to trim is "+numberToTrim);
-		
-		int numberThisRound = (numberToTrim==0) ? numberImages : (numberToTrim*2);
-		logger.info("number this round "+numberThisRound);
+		logger.info("number to trim is " + numberToTrim);
+
+		int numberThisRound = (numberToTrim == 0) ? numberImages : (numberToTrim * 2);
+		logger.info("number this round " + numberThisRound);
 		// loop over and get the correct set of images
 		for (int loop = 0; loop < numberThisRound; loop += 2) {
 			Combatants c = new Combatants(images.get(loop), images.get(loop + 1));
 			nextRounds.add(c);
 		}
-		logger.info("number in this new round is "+nextRounds.size());
+		logger.info("number in this new round is " + nextRounds.size());
 
 		logger.info("< getNextRoundImages ");
 		return nextRounds;
 	}
-	boolean roundDone=false;
+
+	boolean roundDone = false;
 
 	/**
-	 * Move to the next pair of images. 
+	 * Move to the next pair of images.
 	 * 
 	 */
-	public Combatants moveToNext(){
+	public Combatants moveToNext() {
 		this.currentCombatantsIndex++;
-		roundDone = ((currentCombatantsIndex+1)==this.currentRound.getNumberCombatants());
+		roundDone = ((currentCombatantsIndex + 1) == this.currentRound.getNumberCombatants());
 		return this.currentRound.get(this.currentCombatantsIndex);
 	}
 
-	public boolean isRoundComplete(){
-		logger.info("Current index = "+this.currentCombatantsIndex+" round number="+this.currentRound.getNumberCombatants());
+	public boolean isRoundComplete() {
+		logger.info("Current index = " + this.currentCombatantsIndex + " round number="
+				+ this.currentRound.getNumberCombatants());
 		return (roundDone);
 	}
 
 	/**
 	 * Mark an image as having not been voted in
 	 */
-	public void markAsFailed(ImageWrapper imageWrapper)  {
+	public void markAsFailed(ImageWrapper imageWrapper) {
 		imageWrapper.success = false;
 		boolean result = images.remove(imageWrapper);
 		System.out.println(images);
@@ -141,18 +146,18 @@ public class Model {
 		String d = props.getProperty(imageDir);
 		if (d == null || d.trim().equals("")) {
 			throw new Exception("No specified img directory -D" + imageDir);
+		} else {
+			logger.info("Reading images from "+imageDir);
 		}
 
+		//  TODO: Check the cache directory exists
 		String files[] = new File(d).list(new OnlyJpgs());
-		String dest = java.nio.file.Paths.get(java.lang.System.getenv("APP_HOME"),"public","imgs").toString();
+		String dest = java.nio.file.Paths.get(apphome, "public", "imgs").toString();
 		// copy them to the local cache
 
-		//overwrite existing file, if exists
-		CopyOption[] options = new CopyOption[]{
-		  StandardCopyOption.REPLACE_EXISTING,
-		  StandardCopyOption.COPY_ATTRIBUTES
-		}; 
-
+		// overwrite existing file, if exists
+		CopyOption[] options = new CopyOption[] { StandardCopyOption.REPLACE_EXISTING,
+				StandardCopyOption.COPY_ATTRIBUTES };
 
 		if (!isPowerOf2(files.length)) {
 			logger.info("Will need knockout round = Incorrect number of images");
@@ -163,9 +168,9 @@ public class Model {
 
 		for (String f : files) {
 			try {
-				Path from = new File(d,f).toPath();
-				Path to = new File(dest,f).toPath();
-				Files.copy(from,to,options);
+				Path from = new File(d, f).toPath();
+				Path to = new File(dest, f).toPath();
+				Files.copy(from, to, options);
 
 				ImageWrapper im = new ImageWrapper(new File(dest, f));
 				im.uid = uid++;
@@ -173,10 +178,10 @@ public class Model {
 				int i0 = f.indexOf(".");
 				int i1 = f.indexOf("_");
 				i1 = (i1 == -1) ? f.indexOf("-") : i1;
-				
+
 				im.title = f.substring(i1 + 1, i0).trim();
 				im.author = f.substring(0, i1).trim();
-				logger.info("Image ration = "+im.getRatio());
+				logger.info("Image ration = " + im.getRatio());
 				images.add(im);
 			} catch (Exception e) {
 				logger.warning(e.getMessage() + ":" + f);
@@ -190,9 +195,9 @@ public class Model {
 
 		// write out a summary of all the files with author and title
 		for (ImageWrapper im : images) {
-			logger.info(im.author+","+im.title);
+			logger.info(im.author + "," + im.title);
 		}
-		
+
 	}
 
 	protected boolean isPowerOf2(int value) {
@@ -204,14 +209,13 @@ public class Model {
 			return isPowerOf2(value / 2);
 		}
 	}
-	
-	protected int hob(int num)
-	{
-	    int ret = 1;
-	    while ((num >>= 1) !=0 ){
-	        ret <<= 1;
-	    }
-	    return ret;
+
+	protected int hob(int num) {
+		int ret = 1;
+		while ((num >>= 1) != 0) {
+			ret <<= 1;
+		}
+		return ret;
 	}
 
 	public boolean isWinner() {
