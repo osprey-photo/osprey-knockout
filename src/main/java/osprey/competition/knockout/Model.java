@@ -153,6 +153,7 @@ public class Model {
 		//  TODO: Check the cache directory exists
 		String files[] = new File(d).list(new OnlyJpgs());
 		String dest = java.nio.file.Paths.get(apphome, "public", "imgs").toString();
+		String destThumbail = java.nio.file.Paths.get(apphome, "public", "imgs","thumbnails").toString();
 		// copy them to the local cache
 
 		// overwrite existing file, if exists
@@ -181,8 +182,22 @@ public class Model {
 
 				im.title = f.substring(i1 + 1, i0).trim();
 				im.author = f.substring(0, i1).trim();
-				logger.info("Image ration = " + im.getRatio());
+				logger.fine("Image ration = " + im.getRatio());
 				images.add(im);
+
+				// do the thumbnail resize
+				double r =  im.getRatio();
+				int scaledHeight,scaledWidth;
+				if (r>=1){
+					scaledWidth = 300;
+					scaledHeight = (int)(300 * r);
+				} else {
+					scaledHeight = 600;
+					scaledWidth = (int)(600 * r);
+				}
+				String tbName = new File(destThumbail, f).toPath().toString();
+				ImageWrapper.resize(to.toString(), tbName, scaledWidth, scaledHeight);
+
 			} catch (Exception e) {
 				logger.warning(e.getMessage() + ":" + f);
 				Exception newException = new Exception("unable to parse the file name " + f);

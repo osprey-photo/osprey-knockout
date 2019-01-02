@@ -93,8 +93,8 @@ function getImages() {
         // need to get the base filenames
         var fileone = json.one.basename;
         var filetwo = json.two.basename;
-      document.getElementById("imageone").src = './imgs/'+fileone;
-      document.getElementById("imagetwo").src = './imgs/'+filetwo;
+      document.getElementById("imageone").src = './imgs/thumbnails/'+fileone;
+      document.getElementById("imagetwo").src = './imgs/thumbnails/'+filetwo;
     }
   };
   xhttp.open("GET", "imagesvote", true);

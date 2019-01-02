@@ -43,7 +43,7 @@ public class Server {
 
         port(2319);
         exception(Exception.class, (e, req, res) -> e.printStackTrace()); // print all exceptions
-        String htmlDir = java.nio.file.Paths.get(java.lang.System.getenv("APP_HOME"),"public").toString();
+        String htmlDir = java.nio.file.Paths.get(".","public").toString();
         staticFiles.externalLocation(htmlDir);
 
         get("/hello", (req, res) -> "Hello World");
