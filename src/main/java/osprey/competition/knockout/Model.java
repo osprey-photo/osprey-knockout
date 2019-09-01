@@ -1,26 +1,28 @@
 package osprey.competition.knockout;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FilenameFilter;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Properties;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.logging.Logger;
-import java.nio.file.*;
 
 public class Model {
 
 	static String imageDir = "src.image.dir";
 	static String propsFile = "props.file";
 
-	Properties props;
-
-	// Application home directory
-	String apphome;
+	StateStore props;
 
 	Round currentRound;
 	int currentCombatantsIndex;
+
+	Consumer<String> feedbackSupplier;
 
 	// logger for debug output
 	private static Logger logger = Logger.getLogger(Model.class.getName());
@@ -29,23 +31,13 @@ public class Model {
 		logger.info("Model <init>");
 	}
 
+	public void setFeedbackSupplier(Consumer<String> s){
+		this.feedbackSupplier = s;
+	}
+
 	public void init() throws Exception {
-		apphome = System.getProperty("app.home");
-		if (apphome == null || apphome.trim().equals("") || apphome.equals("MY_APP_HOME")) {
-			apphome = ".";
-		}
-		String d = System.getProperty(propsFile);
-		if (d == null || d.trim().equals("")) {
-			d = java.nio.file.Paths.get(apphome, "imageviewer.props").toString();
-			logger.info("No specified props file -D" + propsFile + " assuming " + d);
 
-		}
-
-		props = new Properties();
-		FileInputStream inStream = new FileInputStream(d);
-		props.load(inStream);
-		inStream.close();
-
+		props = StateStore.getStateStore();
 		images = new ArrayList<ImageWrapper>();
 
 		scanDirectory();
@@ -152,8 +144,13 @@ public class Model {
 
 		//  TODO: Check the cache directory exists
 		String files[] = new File(d).list(new OnlyJpgs());
-		String dest = java.nio.file.Paths.get(apphome, "public", "imgs").toString();
-		String destThumbail = java.nio.file.Paths.get(apphome, "public", "imgs","thumbnails").toString();
+		File dataDir = java.nio.file.Paths.get(props.getFileCache(), "public", "imgs","thumbnails").toFile();
+		if (!dataDir.exists()) {
+			dataDir.mkdirs();
+		}
+
+		String dest = java.nio.file.Paths.get(props.getFileCache(), "public", "imgs").toString();
+		String destThumbail =dataDir.toString();
 		// copy them to the local cache
 
 		// overwrite existing file, if exists
@@ -162,6 +159,7 @@ public class Model {
 
 		if (!isPowerOf2(files.length)) {
 			logger.info("Will need knockout round = Incorrect number of images");
+			this.feedbackSupplier.accept("Will need knockout round");
 			this.round = -1;
 		}
 		int uid = 0;
@@ -172,7 +170,7 @@ public class Model {
 				Path from = new File(d, f).toPath();
 				Path to = new File(dest, f).toPath();
 				Files.copy(from, to, options);
-
+				this.feedbackSupplier.accept(f.toString());
 				ImageWrapper im = new ImageWrapper(new File(dest, f));
 				im.uid = uid++;
 
@@ -182,7 +180,7 @@ public class Model {
 
 				im.title = f.substring(i1 + 1, i0).trim();
 				im.author = f.substring(0, i1).trim();
-				logger.fine("Image ration = " + im.getRatio());
+				logger.fine("Image ratio = " + im.getRatio());
 				images.add(im);
 
 				// do the thumbnail resize
@@ -207,12 +205,8 @@ public class Model {
 		}
 
 		logger.info("Loaded files " + images.size());
-
-		// write out a summary of all the files with author and title
-		for (ImageWrapper im : images) {
-			logger.info(im.author + "," + im.title);
-		}
-
+		this.feedbackSupplier.accept("Loaded files " + images.size());
+		this.feedbackSupplier.accept("Good to run competition");
 	}
 
 	protected boolean isPowerOf2(int value) {

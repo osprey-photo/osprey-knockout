@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Knockout",
+            "request": "launch",
+            "mainClass": "osprey/osprey.competition.Knockout",
+            "projectName": "osprey-knockout"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"

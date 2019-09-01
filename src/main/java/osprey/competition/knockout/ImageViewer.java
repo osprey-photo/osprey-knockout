@@ -1,6 +1,6 @@
 package osprey.competition.knockout;
 
-import osprey.competition.rest.*;
+// import osprey.competition.rest.*;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -33,7 +33,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class ImageViewer extends Application implements Controller {
+public class ImageViewer implements Controller {
 
 	/**
 	 */
@@ -51,7 +51,7 @@ public class ImageViewer extends Application implements Controller {
 	Combatants currentImages;
 	Scene scene;
 	ImageView selectedImage1;
-	Server restServer;
+	// Server restServer;
 
 	private static Logger logger = Logger.getLogger(ImageViewer.class.getName());
 
@@ -60,18 +60,16 @@ public class ImageViewer extends Application implements Controller {
 		logger.info("<init>");
 	}
 
-	@Override
-	public void init() throws Exception {
-		super.init();
+
+	public void init(Model model)  {
+		// super.init();
 		logger.info("init");
 
-		// create the model
-		this.model = new Model();
-		model.init();
 
+		this.model = model;
 		// get the controller, and start up the rest server
-		restServer = new Server((Controller) this, model);
-		restServer.go();
+		// restServer = new Server((Controller) this, model);
+		// restServer.go();
 
 		currentRound = model.getNextRound();
 
@@ -79,13 +77,15 @@ public class ImageViewer extends Application implements Controller {
 		state = STATE.ROUND_TITLE;
 	}
 
-	@Override
-	public void stop() throws Exception {
-		super.stop();
-	}
+	// @Override
+	// public void stop() throws Exception {
+	// 	super.stop();
+	// }
 
 	public VBox getRoundTitle() {
 		VBox root = new VBox();
+		
+		root.setStyle("-fx-background-color: #000000FF");
 		logger.info("getRoundTtitle");
 
 		Text bwps = new Text("Bishop's Waltham\nPhotographic Society\n");
@@ -126,7 +126,7 @@ public class ImageViewer extends Application implements Controller {
 		currentImages = model.moveToNext(); // list.get(current);
 		logger.info("moving to the next images " + currentImages);
 		VBox root = new VBox();
-
+		root.setStyle("-fx-background-color: #000000FF");
 		selectedImage1 = new ImageView();
 		_setImg(currentImages.imageOne);
 
@@ -150,7 +150,7 @@ public class ImageViewer extends Application implements Controller {
 		state = STATE.WINNER;
 
 		VBox root = new VBox();
-
+		root.setStyle("-fx-background-color: #000000FF");
 		ImageView winnerView = new ImageView();
 
 		ImageWrapper winner = model.getWinner();
@@ -176,15 +176,15 @@ public class ImageViewer extends Application implements Controller {
 		return root;
 	}
 
-	@Override
+
 	public void start(Stage stage) {
 		try {
 			stage.setTitle("Image Viewer");
 			stage.setWidth(800);
 			stage.setHeight(800);
 			scene = new Scene(new Group());
-
-			scene.setFill(Color.BLACK);
+			
+			// scene.setFill(Color.BLACK);
 			scene.setRoot(getRoundTitle());
 
 			state = STATE.ROUND_TITLE;
@@ -237,7 +237,7 @@ public class ImageViewer extends Application implements Controller {
 		grid.setHgap(10);
 		grid.setVgap(10);
 		grid.setPadding(new Insets(0, 10, 0, 10));
-
+		grid.setStyle("-fx-background-color: #000000FF");
 		ImageView imageHouse = new ImageView(currentImages.imageOne.image);
 		imageHouse.setPreserveRatio(true);
 		// imageHouse.autosize();

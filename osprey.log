@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-09-01T16:44:39.345718400Z</date>
+  <millis>1567356279345</millis>
+  <nanos>718400</nanos>
+  <sequence>0</sequence>
+  <logger>osprey.competition.knockout.Model</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.Model</class>
+  <method>&lt;init&gt;</method>
+  <thread>16</thread>
+  <message>Model &lt;init&gt;</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:39.383719800Z</date>
+  <millis>1567356279383</millis>
+  <nanos>719800</nanos>
+  <sequence>1</sequence>
+  <logger>osprey.competition.knockout.Model</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.Model</class>
+  <method>scanDirectory</method>
+  <thread>22</thread>
+  <message>Reading images from src.image.dir</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:39.389724100Z</date>
+  <millis>1567356279389</millis>
+  <nanos>724100</nanos>
+  <sequence>2</sequence>
+  <logger>osprey.competition.knockout.Model</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.Model</class>
+  <method>scanDirectory</method>
+  <thread>22</thread>
+  <message>Will need knockout round = Incorrect number of images</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:39.391722400Z</date>
+  <millis>1567356279391</millis>
+  <nanos>722400</nanos>
+  <sequence>3</sequence>
+  <logger>osprey.competition.knockout.Model</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.Model</class>
+  <method>scanDirectory</method>
+  <thread>22</thread>
+  <message>Loading files from C:\imgs\AGM Competition</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:39.407718800Z</date>
+  <millis>1567356279407</millis>
+  <nanos>718800</nanos>
+  <sequence>4</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Advertisement!_Gareth Morgan.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:39.456733Z</date>
+  <millis>1567356279456</millis>
+  <nanos>733000</nanos>
+  <sequence>5</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Advertisement!_Gareth Morgan.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:39.722728800Z</date>
+  <millis>1567356279722</millis>
+  <nanos>728800</nanos>
+  <sequence>6</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alan Keevil_Restoration Malta.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:39.799723600Z</date>
+  <millis>1567356279799</millis>
+  <nanos>723600</nanos>
+  <sequence>7</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alan Keevil_Restoration Malta.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.019719300Z</date>
+  <millis>1567356280019</millis>
+  <nanos>719300</nanos>
+  <sequence>8</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alan Kevill_Early morning at St Kitts.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.065737700Z</date>
+  <millis>1567356280065</millis>
+  <nanos>737700</nanos>
+  <sequence>9</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alan Kevill_Early morning at St Kitts.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.216734700Z</date>
+  <millis>1567356280216</millis>
+  <nanos>734700</nanos>
+  <sequence>10</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alistair Hood_Dorset Sunset.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.256737700Z</date>
+  <millis>1567356280256</millis>
+  <nanos>737700</nanos>
+  <sequence>11</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alistair Hood_Dorset Sunset.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.367728500Z</date>
+  <millis>1567356280367</millis>
+  <nanos>728500</nanos>
+  <sequence>12</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alistair Hood_Pay Here.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.444729800Z</date>
+  <millis>1567356280444</millis>
+  <nanos>729800</nanos>
+  <sequence>13</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Alistair Hood_Pay Here.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.572727100Z</date>
+  <millis>1567356280572</millis>
+  <nanos>727100</nanos>
+  <sequence>14</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Anne Riches_6 in Hand.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:40.848726600Z</date>
+  <millis>1567356280848</millis>
+  <nanos>726600</nanos>
+  <sequence>15</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Anne Riches_6 in Hand.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:41.691717100Z</date>
+  <millis>1567356281691</millis>
+  <nanos>717100</nanos>
+  <sequence>16</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Anne Riches_Misty Morning.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:41.769733400Z</date>
+  <millis>1567356281769</millis>
+  <nanos>733400</nanos>
+  <sequence>17</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Anne Riches_Misty Morning.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.096721Z</date>
+  <millis>1567356282096</millis>
+  <nanos>721000</nanos>
+  <sequence>18</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Betty Draper_Satin Dollz.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.191719600Z</date>
+  <millis>1567356282191</millis>
+  <nanos>719600</nanos>
+  <sequence>19</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Betty Draper_Satin Dollz.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.293722400Z</date>
+  <millis>1567356282293</millis>
+  <nanos>722400</nanos>
+  <sequence>20</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Betty Draper_Waddesdon Manor.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.369735100Z</date>
+  <millis>1567356282369</millis>
+  <nanos>735100</nanos>
+  <sequence>21</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Betty Draper_Waddesdon Manor.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.437720100Z</date>
+  <millis>1567356282437</millis>
+  <nanos>720100</nanos>
+  <sequence>22</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Chris Holland_Beak Full.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.480718700Z</date>
+  <millis>1567356282480</millis>
+  <nanos>718700</nanos>
+  <sequence>23</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Chris Holland_Beak Full.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.557728800Z</date>
+  <millis>1567356282557</millis>
+  <nanos>728800</nanos>
+  <sequence>24</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Chris Holland_Broad-Bodied Chaser Libellula Depressa.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.594734600Z</date>
+  <millis>1567356282594</millis>
+  <nanos>734600</nanos>
+  <sequence>25</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Chris Holland_Broad-Bodied Chaser Libellula Depressa.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.654732600Z</date>
+  <millis>1567356282654</millis>
+  <nanos>732600</nanos>
+  <sequence>26</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Christine Reddington_Happy Eyes.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.724717400Z</date>
+  <millis>1567356282724</millis>
+  <nanos>717400</nanos>
+  <sequence>27</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Christine Reddington_Happy Eyes.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:42.946738500Z</date>
+  <millis>1567356282946</millis>
+  <nanos>738500</nanos>
+  <sequence>28</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Christine Reddington_Hi-tech Shower.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.014724300Z</date>
+  <millis>1567356283014</millis>
+  <nanos>724300</nanos>
+  <sequence>29</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Christine Reddington_Hi-tech Shower.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.183718Z</date>
+  <millis>1567356283183</millis>
+  <nanos>718000</nanos>
+  <sequence>30</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dave Kirkland_BR Standard Tank.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.239715900Z</date>
+  <millis>1567356283239</millis>
+  <nanos>715900</nanos>
+  <sequence>31</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dave Kirkland_BR Standard Tank.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.324742500Z</date>
+  <millis>1567356283324</millis>
+  <nanos>742500</nanos>
+  <sequence>32</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dave Kirkland_Drummond T9.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.371742100Z</date>
+  <millis>1567356283371</millis>
+  <nanos>742100</nanos>
+  <sequence>33</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dave Kirkland_Drummond T9.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.446733700Z</date>
+  <millis>1567356283446</millis>
+  <nanos>733700</nanos>
+  <sequence>34</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\David Fletcher_Lunchtime.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.466736200Z</date>
+  <millis>1567356283466</millis>
+  <nanos>736200</nanos>
+  <sequence>35</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\David Fletcher_Lunchtime.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.497735300Z</date>
+  <millis>1567356283497</millis>
+  <nanos>735300</nanos>
+  <sequence>36</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\David Fletcher_Tomato Soup.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.528724400Z</date>
+  <millis>1567356283528</millis>
+  <nanos>724400</nanos>
+  <sequence>37</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\David Fletcher_Tomato Soup.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.562717700Z</date>
+  <millis>1567356283562</millis>
+  <nanos>717700</nanos>
+  <sequence>38</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dawn Blight_Cuteness.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.597717300Z</date>
+  <millis>1567356283597</millis>
+  <nanos>717300</nanos>
+  <sequence>39</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dawn Blight_Cuteness.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.647731800Z</date>
+  <millis>1567356283647</millis>
+  <nanos>731800</nanos>
+  <sequence>40</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dawn Blight_For You.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.719720900Z</date>
+  <millis>1567356283719</millis>
+  <nanos>720900</nanos>
+  <sequence>41</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dawn Blight_For You.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.837729800Z</date>
+  <millis>1567356283837</millis>
+  <nanos>729800</nanos>
+  <sequence>42</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dianne Lucas_Art student.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:43.923720200Z</date>
+  <millis>1567356283923</millis>
+  <nanos>720200</nanos>
+  <sequence>43</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dianne Lucas_Art student.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:44.286719Z</date>
+  <millis>1567356284286</millis>
+  <nanos>719000</nanos>
+  <sequence>44</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dianne Lucas_Damsels.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:44.393721400Z</date>
+  <millis>1567356284393</millis>
+  <nanos>721400</nanos>
+  <sequence>45</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Dianne Lucas_Damsels.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:44.656734900Z</date>
+  <millis>1567356284656</millis>
+  <nanos>734900</nanos>
+  <sequence>46</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Gabor Kovacs_keys.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:44.720736600Z</date>
+  <millis>1567356284720</millis>
+  <nanos>736600</nanos>
+  <sequence>47</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Gabor Kovacs_keys.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:44.873718800Z</date>
+  <millis>1567356284873</millis>
+  <nanos>718800</nanos>
+  <sequence>48</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Gabor Kovacs_Louboutins.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:44.923719800Z</date>
+  <millis>1567356284923</millis>
+  <nanos>719800</nanos>
+  <sequence>49</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Gabor Kovacs_Louboutins.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:45.032724200Z</date>
+  <millis>1567356285032</millis>
+  <nanos>724200</nanos>
+  <sequence>50</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_Circles in the sand.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:45.149735100Z</date>
+  <millis>1567356285149</millis>
+  <nanos>735100</nanos>
+  <sequence>51</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_Circles in the sand.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:45.490718500Z</date>
+  <millis>1567356285490</millis>
+  <nanos>718500</nanos>
+  <sequence>52</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_Its a Carrot.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:45.568733600Z</date>
+  <millis>1567356285568</millis>
+  <nanos>733600</nanos>
+  <sequence>53</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_Its a Carrot.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:45.858722400Z</date>
+  <millis>1567356285858</millis>
+  <nanos>722400</nanos>
+  <sequence>54</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_KAI.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:45.949743800Z</date>
+  <millis>1567356285949</millis>
+  <nanos>743800</nanos>
+  <sequence>55</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_KAI.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:46.274734200Z</date>
+  <millis>1567356286274</millis>
+  <nanos>734200</nanos>
+  <sequence>56</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_Lets Get it On !.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:46.401737100Z</date>
+  <millis>1567356286401</millis>
+  <nanos>737100</nanos>
+  <sequence>57</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Geoff Bartlett_Lets Get it On !.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:46.858736400Z</date>
+  <millis>1567356286858</millis>
+  <nanos>736400</nanos>
+  <sequence>58</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Hillary Dean-Huges_Certainly not camera Shy!.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:46.932721100Z</date>
+  <millis>1567356286932</millis>
+  <nanos>721100</nanos>
+  <sequence>59</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Hillary Dean-Huges_Certainly not camera Shy!.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.113733900Z</date>
+  <millis>1567356287113</millis>
+  <nanos>733900</nanos>
+  <sequence>60</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Hillary Dean-Huges_Mother and Infant Oran-utan.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.244730Z</date>
+  <millis>1567356287244</millis>
+  <nanos>730000</nanos>
+  <sequence>61</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Hillary Dean-Huges_Mother and Infant Oran-utan.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.567717100Z</date>
+  <millis>1567356287567</millis>
+  <nanos>717100</nanos>
+  <sequence>62</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Jeff Johnson_Melting Away.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.612718Z</date>
+  <millis>1567356287612</millis>
+  <nanos>718000</nanos>
+  <sequence>63</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Jeff Johnson_Melting Away.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.734735Z</date>
+  <millis>1567356287734</millis>
+  <nanos>735000</nanos>
+  <sequence>64</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Jerry Draper_Christmas Bauble.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.754721100Z</date>
+  <millis>1567356287754</millis>
+  <nanos>721100</nanos>
+  <sequence>65</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Jerry Draper_Christmas Bauble.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.800717800Z</date>
+  <millis>1567356287800</millis>
+  <nanos>717800</nanos>
+  <sequence>66</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Jerry Draper_Corfe Castle at Night.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.826724800Z</date>
+  <millis>1567356287826</millis>
+  <nanos>724800</nanos>
+  <sequence>67</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Jerry Draper_Corfe Castle at Night.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.880720Z</date>
+  <millis>1567356287880</millis>
+  <nanos>720000</nanos>
+  <sequence>68</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Anti-photographer Steam Punk.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:47.993720600Z</date>
+  <millis>1567356287993</millis>
+  <nanos>720600</nanos>
+  <sequence>69</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Anti-photographer Steam Punk.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:48.464718500Z</date>
+  <millis>1567356288464</millis>
+  <nanos>718500</nanos>
+  <sequence>70</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Flagler College Ceiling.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:48.540725100Z</date>
+  <millis>1567356288540</millis>
+  <nanos>725100</nanos>
+  <sequence>71</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Flagler College Ceiling.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:48.695716600Z</date>
+  <millis>1567356288695</millis>
+  <nanos>716600</nanos>
+  <sequence>72</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Ghost Crab.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:48.773718500Z</date>
+  <millis>1567356288773</millis>
+  <nanos>718500</nanos>
+  <sequence>73</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Ghost Crab.JPG</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.074736100Z</date>
+  <millis>1567356289074</millis>
+  <nanos>736100</nanos>
+  <sequence>74</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Palmeston Folly.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.159731700Z</date>
+  <millis>1567356289159</millis>
+  <nanos>731700</nanos>
+  <sequence>75</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\John Coote_Palmeston Folly.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.367718900Z</date>
+  <millis>1567356289367</millis>
+  <nanos>718900</nanos>
+  <sequence>76</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Kev Melsome_Lest We Forget.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.430727800Z</date>
+  <millis>1567356289430</millis>
+  <nanos>727800</nanos>
+  <sequence>77</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Kev Melsome_Lest We Forget.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.539716200Z</date>
+  <millis>1567356289539</millis>
+  <nanos>716200</nanos>
+  <sequence>78</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Kev Melsome_Over The Top.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.572719300Z</date>
+  <millis>1567356289572</millis>
+  <nanos>719300</nanos>
+  <sequence>79</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Kev Melsome_Over The Top.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.665719800Z</date>
+  <millis>1567356289665</millis>
+  <nanos>719800</nanos>
+  <sequence>80</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Kev Melsome_Sunset.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.723716800Z</date>
+  <millis>1567356289723</millis>
+  <nanos>716800</nanos>
+  <sequence>81</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Kev Melsome_Sunset.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.837722400Z</date>
+  <millis>1567356289837</millis>
+  <nanos>722400</nanos>
+  <sequence>82</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Maggie Hickish_butter wouldn't melt.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.878720500Z</date>
+  <millis>1567356289878</millis>
+  <nanos>720500</nanos>
+  <sequence>83</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Maggie Hickish_butter wouldn't melt.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:49.972719100Z</date>
+  <millis>1567356289972</millis>
+  <nanos>719100</nanos>
+  <sequence>84</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Maggie Hickish_In trouble now.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.000722900Z</date>
+  <millis>1567356290000</millis>
+  <nanos>722900</nanos>
+  <sequence>85</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Maggie Hickish_In trouble now.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.096732400Z</date>
+  <millis>1567356290096</millis>
+  <nanos>732400</nanos>
+  <sequence>86</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Matthew White_Bang Bang.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.156733300Z</date>
+  <millis>1567356290156</millis>
+  <nanos>733300</nanos>
+  <sequence>87</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Matthew White_Bang Bang.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.501718300Z</date>
+  <millis>1567356290501</millis>
+  <nanos>718300</nanos>
+  <sequence>88</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Matthew White_Word wrap gone wrong.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.558734900Z</date>
+  <millis>1567356290558</millis>
+  <nanos>734900</nanos>
+  <sequence>89</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Matthew White_Word wrap gone wrong.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.820729500Z</date>
+  <millis>1567356290820</millis>
+  <nanos>729500</nanos>
+  <sequence>90</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Mike Hickish_Side by Side.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.864722600Z</date>
+  <millis>1567356290864</millis>
+  <nanos>722600</nanos>
+  <sequence>91</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Mike Hickish_Side by Side.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.953723600Z</date>
+  <millis>1567356290953</millis>
+  <nanos>723600</nanos>
+  <sequence>92</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Mike Hickish_Why am I feeling seasick.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:50.979719800Z</date>
+  <millis>1567356290979</millis>
+  <nanos>719800</nanos>
+  <sequence>93</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Mike Hickish_Why am I feeling seasick.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.058724500Z</date>
+  <millis>1567356291058</millis>
+  <nanos>724500</nanos>
+  <sequence>94</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Peter Mason_Snow for the Hobbits.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.114716Z</date>
+  <millis>1567356291114</millis>
+  <nanos>716000</nanos>
+  <sequence>95</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Peter Mason_Snow for the Hobbits.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.250738800Z</date>
+  <millis>1567356291250</millis>
+  <nanos>738800</nanos>
+  <sequence>96</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Philippa Smith_bah humbug.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.285727300Z</date>
+  <millis>1567356291285</millis>
+  <nanos>727300</nanos>
+  <sequence>97</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Philippa Smith_bah humbug.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.354734200Z</date>
+  <millis>1567356291354</millis>
+  <nanos>734200</nanos>
+  <sequence>98</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Philippa Smith_Rainy Day.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.419722300Z</date>
+  <millis>1567356291419</millis>
+  <nanos>722300</nanos>
+  <sequence>99</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Philippa Smith_Rainy Day.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.506718700Z</date>
+  <millis>1567356291506</millis>
+  <nanos>718700</nanos>
+  <sequence>100</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Sarah Townley_Aarghh.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.560719200Z</date>
+  <millis>1567356291560</millis>
+  <nanos>719200</nanos>
+  <sequence>101</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Sarah Townley_Aarghh.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.652750800Z</date>
+  <millis>1567356291652</millis>
+  <nanos>750800</nanos>
+  <sequence>102</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Sarah Townley_Southern Hawker.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.703734900Z</date>
+  <millis>1567356291703</millis>
+  <nanos>734900</nanos>
+  <sequence>103</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Sarah Townley_Southern Hawker.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.816718100Z</date>
+  <millis>1567356291816</millis>
+  <nanos>718100</nanos>
+  <sequence>104</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Sarah Townley_This is getting boring.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.870733900Z</date>
+  <millis>1567356291870</millis>
+  <nanos>733900</nanos>
+  <sequence>105</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Sarah Townley_This is getting boring.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:51.980735500Z</date>
+  <millis>1567356291980</millis>
+  <nanos>735500</nanos>
+  <sequence>106</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Stephen Townsend_Hopeful.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.006739500Z</date>
+  <millis>1567356292006</millis>
+  <nanos>739500</nanos>
+  <sequence>107</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Stephen Townsend_Hopeful.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.095718300Z</date>
+  <millis>1567356292095</millis>
+  <nanos>718300</nanos>
+  <sequence>108</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Stephen Townsend_Mislocated.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.131718100Z</date>
+  <millis>1567356292131</millis>
+  <nanos>718100</nanos>
+  <sequence>109</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Stephen Townsend_Mislocated.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.212722600Z</date>
+  <millis>1567356292212</millis>
+  <nanos>722600</nanos>
+  <sequence>110</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Steve Green_Dolomite Dawn.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.238719100Z</date>
+  <millis>1567356292238</millis>
+  <nanos>719100</nanos>
+  <sequence>111</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Steve Green_Dolomite Dawn.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.311721700Z</date>
+  <millis>1567356292311</millis>
+  <nanos>721700</nanos>
+  <sequence>112</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>Loading for C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Steve Green_Stormy Evening Faroe Islands.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.346744700Z</date>
+  <millis>1567356292346</millis>
+  <nanos>744700</nanos>
+  <sequence>113</sequence>
+  <logger>osprey.competition.knockout.ImageWrapper</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.ImageWrapper</class>
+  <method>&lt;init&gt;</method>
+  <thread>22</thread>
+  <message>loaded file C:\Users\matthew\AppData\Roaming\ospreyknockout\cache\public\imgs\Steve Green_Stormy Evening Faroe Islands.jpg</message>
+</record>
+<record>
+  <date>2019-09-01T16:44:52.435721900Z</date>
+  <millis>1567356292435</millis>
+  <nanos>721900</nanos>
+  <sequence>114</sequence>
+  <logger>osprey.competition.knockout.Model</logger>
+  <level>INFO</level>
+  <class>osprey.competition.knockout.Model</class>
+  <method>scanDirectory</method>
+  <thread>22</thread>
+  <message>Loaded files 55</message>
+</record>

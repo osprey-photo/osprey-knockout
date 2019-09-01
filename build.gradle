@@ -5,13 +5,15 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * user guide available at https://docs.gradle.org/4.4/userguide/tutorial_java_projects.html
  */
+import org.gradle.plugins.ide.eclipse.model.AccessRule
 
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
-
-// Apply the application plugin to add support for building an application
-apply plugin: 'application'
-
+plugins {
+  id 'java'
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.0.8'
+  id 'org.beryx.jlink' version '2.14.1'
+  id 'eclipse'
+}
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
@@ -19,16 +21,16 @@ repositories {
     jcenter()
 }
 
-compileJava   {
-  sourceCompatibility = '1.8'
-  targetCompatibility = '1.8'
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls' ]
 }
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     compile "org.slf4j:slf4j-simple:1.7.21"
-    compile "com.sparkjava:spark-core:2.5" // add to build.gradle (for Java users)
-    compile 'com.google.guava:guava:23.0'
+    // compile "com.sparkjava:spark-core:2.8" // add to build.gradle (for Java users)
+   
     compile "com.beust:jcommander:1.71"
     compile "org.jodd:jodd-json:3.9.1"
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.10.0'
@@ -40,12 +42,30 @@ dependencies {
 
 applicationDefaultJvmArgs = ["-Dapp.home=MY_APP_HOME"]
 
-startScripts {
-    doLast {
-        unixScript.text = unixScript.text.replace('MY_APP_HOME', '\$APP_HOME') 
-        windowsScript.text = windowsScript.text.replace('MY_APP_HOME', '%~dp0..')
+eclipse {
+    classpath {
+        file {
+            whenMerged {
+                def jre = entries.find { it.path.contains 'org.eclipse.jdt.launching.JRE_CONTAINER' }
+                jre.accessRules.add(new AccessRule('0', 'javafx/**'))
+                jre.accessRules.add(new AccessRule('0', 'com/sun/javafx/**'))
+            }
+        }
     }
 }
 
 // Define the main class for the application
-mainClassName = 'App'
+mainClassName = "$moduleName/osprey.competition.Knockout"
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'Osprey Knockout'
+    }
+    jpackage {
+        // Set the environment property BADASS_JLINK_JPACKAGE_HOME or explicitly configure the below property
+        jpackageHome = 'c:/_jdks/jdk-14'
+        installerType= 'msi'
+        installerOptions = ['--win-per-user-install', '--win-dir-chooser']
+    }
+}
