@@ -43,6 +43,17 @@ public class Model {
 		scanDirectory();
 	}
 
+	String mainTitle;
+
+	public String getMainTitle(){
+		return this.mainTitle;
+	}
+
+	public Model setMainTitle(String title){
+		this.mainTitle = title;
+		return this;
+	}
+
 	ArrayList<ImageWrapper> images;
 	int round = 0;
 	int currentImage = 0;
@@ -159,7 +170,6 @@ public class Model {
 
 		if (!isPowerOf2(files.length)) {
 			logger.info("Will need knockout round = Incorrect number of images");
-			this.feedbackSupplier.accept("Will need knockout round");
 			this.round = -1;
 		}
 		int uid = 0;
@@ -170,7 +180,7 @@ public class Model {
 				Path from = new File(d, f).toPath();
 				Path to = new File(dest, f).toPath();
 				Files.copy(from, to, options);
-				this.feedbackSupplier.accept(f.toString());
+				this.feedbackSupplier.accept("ok "+f.toString());
 				ImageWrapper im = new ImageWrapper(new File(dest, f));
 				im.uid = uid++;
 
@@ -178,8 +188,20 @@ public class Model {
 				int i1 = f.indexOf("_");
 				i1 = (i1 == -1) ? f.indexOf("-") : i1;
 
+				if (i1 < 1) {
+					this.feedbackSupplier.accept("!! No _ or - in image file "+f);
+					continue;
+				}
 				im.title = f.substring(i1 + 1, i0).trim();
+				if ( im.title.length()==0) {
+					this.feedbackSupplier.accept("!! Title is empty "+f.toString());
+					continue;
+				}
 				im.author = f.substring(0, i1).trim();
+				if ( im.author.length()==0) {
+					this.feedbackSupplier.accept("!! Author is empty "+f.toString());
+					continue;
+				}
 				logger.fine("Image ratio = " + im.getRatio());
 				images.add(im);
 
@@ -205,8 +227,10 @@ public class Model {
 		}
 
 		logger.info("Loaded files " + images.size());
+		this.feedbackSupplier.accept("-----------------------");
 		this.feedbackSupplier.accept("Loaded files " + images.size());
 		this.feedbackSupplier.accept("Good to run competition");
+		this.feedbackSupplier.accept("-----------------------");
 	}
 
 	protected boolean isPowerOf2(int value) {

@@ -88,7 +88,7 @@ public class ImageViewer implements Controller {
 		root.setStyle("-fx-background-color: #000000FF");
 		logger.info("getRoundTtitle");
 
-		Text bwps = new Text("Bishop's Waltham\nPhotographic Society\n");
+		Text bwps = new Text(model.getMainTitle());
 		bwps.setFont(Font.font("Arial", FontWeight.BOLD, 60));
 		bwps.setFill(Color.WHITE);
 
