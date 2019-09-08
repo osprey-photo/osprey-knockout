@@ -16,14 +16,17 @@ This is a piece of software that I wrote for Bishop's Waltham Photographic Socie
 All the members vote on the favourite images, until like in sporting events, you get to semi-finals, then the final. 
 It's proved very enteraining evening and we intend to continue!
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/pmarsceill/just-the-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
+---
 
 <div class="code-example">
   Though we've been using this for some years; this is the software's first public release - both for the software and the documentation. Please be gentle - and please do get in touch.  I'd love other clubs to have the same fun interactive evenings we've had... so please do get in touch if you want to try this out.
   {: .fs-6 .fw-300 }
 <div class="code-example">
+
+---
   
 Contact - twitter @calanais  or email  matthew@mh-white.com
+
 ---
 
 ## Getting started
