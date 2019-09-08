@@ -18,10 +18,8 @@ It's proved very enteraining evening and we intend to continue!
 
 ---
 
-
 Though we've been using this for some years; this is the software's first public release - both for the software and the documentation. Please be gentle - and please do get in touch.  I'd love other clubs to have the same fun interactive evenings we've had... so please do get in touch if you want to try this out.
-{: .fs-6 .bg-grey-dk-000 .text-grey-lt-000}
-
+{: .bg-grey-dk-000 .text-grey-lt-000}
 
 ---
   
