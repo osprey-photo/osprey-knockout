@@ -18,10 +18,10 @@ It's proved very enteraining evening and we intend to continue!
 
 ---
 
-<div class="code-example">
+
 Though we've been using this for some years; this is the software's first public release - both for the software and the documentation. Please be gentle - and please do get in touch.  I'd love other clubs to have the same fun interactive evenings we've had... so please do get in touch if you want to try this out.
 {: .fs-6 .fw-600 .bg-blue-100}
-</div>
+
 
 ---
   
