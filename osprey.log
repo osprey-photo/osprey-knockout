@@ -1,0 +1,91 @@
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 awt.toolkit==sun.awt.X11.XToolkit
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 file.encoding.pkg==sun.io
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 jdk.extensions.version==17.0.4.0
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.specification.version==17
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 javafx.runtime.version==17.0.1+1
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.jnu.encoding==UTF-8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.class.path==
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vm.vendor==Eclipse OpenJ9
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.arch.data.model==64
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.vm.bitmode==64
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 user.variant==
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.oti.vm.library.version==29
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vendor.url==https://www.ibm.com/semeru-runtimes
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 user.timezone==Europe/London
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 os.name==Linux
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vm.specification.version==17
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 javafx.version==17.0.1
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 user.country==US
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.java.launcher==SUN_STANDARD
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.boot.library.path==/home/matthew/.sdkman/candidates/java/17.0.4-sem/lib/default:/home/matthew/.sdkman/candidates/java/17.0.4-sem/lib
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.java.command==osprey/osprey.competition.Knockout -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant --module osprey/osprey.competition.Knockout
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.cpu.endian==little
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 user.home==/home/matthew
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 user.language==en
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.specification.vendor==Oracle Corporation
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 jdk.module.path==/home/matthew/github.com/osprey-photo/osprey-knockout/build/libs/osprey-knockout.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/2.0.6/78c57967fe87a823697fe6cf0f5b394b0aa18337/slf4j-simple-2.0.6.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/com.beust/jcommander/1.71/739360ff1c3094bfd4ca3a0ef5c2127ce3fca7dd/jcommander-1.71.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.jodd/jodd-json/3.9.1/d73590574f1d2ce97c51db0c38e2958c8be6dc72/jodd-json-3.9.1.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.10.0/c90b597163cd28ab6d9687edd53db601b6ea75a1/log4j-core-2.10.0.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.10.0/fec5797a55b786184a537abd39c3fa1449d752d6/log4j-api-2.10.0.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/io.nayuki/qrcodegen/1.4.0/421a9b9dbaaeebf8f6574c2026ba37a901498545/qrcodegen-1.4.0.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.6/88c40d8b4f33326f19a7d3c0aaf2c7e8721d4953/slf4j-api-2.0.6.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.jodd/jodd-bean/3.9.1/ab4c9fc612f11dc97502e7f1e6b7e18c09747504/jodd-bean-3.9.1.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.jodd/jodd-core/3.9.1/38ca9884ca1a3f7cb27a4d82ead7dc0ac8694f18/jodd-core-3.9.1.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-fxml/17.0.1/32d1ade3f5da43d582ee5e449d4ab4fa16de4c02/javafx-fxml-17.0.1-linux.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/17.0.1/7384d18f885a75ef7c5c6e66c9fdf879aea0040c/javafx-controls-17.0.1-linux.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/17.0.1/fd5a2d9a6d0a503e126b710c620a70830df46573/javafx-graphics-17.0.1-linux.jar:/home/matthew/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/17.0.1/2ff8676737cfb10b5a57e1953c7f19dd026fe15/javafx-base-17.0.1-linux.jar
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.version.date==2022-07-19
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.home==/home/matthew/.sdkman/candidates/java/17.0.4-sem
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 ibm.signalhandling.rs==false
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 openjdk.methodhandles==true
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 file.separator==/
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 jdk.extensions.name==Extensions for OpenJDK for Eclipse OpenJ9
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 line.separator==
+
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.specification.name==Java Platform API Specification
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vm.specification.vendor==Oracle Corporation
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.compiler==j9jit29
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.util.extralibs.properties==
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.awt.graphicsenv==sun.awt.X11GraphicsEnvironment
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.oti.configuration==scar
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.awt.fonts==
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 jdk.module.main.class==osprey.competition.Knockout
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.oti.shared.enabled==false
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 jdk.boot.class.path.append==
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 jdk.module.main==osprey
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.oti.vm.bootstrap.library.path==/home/matthew/.sdkman/candidates/java/17.0.4-sem/lib/default:/home/matthew/.sdkman/candidates/java/17.0.4-sem/lib
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.cpu.endian==little
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.fullversion==17.0.4+8
+JRE 17 Linux amd64-64-Bit Compressed References 20220719_256 (JIT enabled, AOT enabled)
+OpenJ9   - 04a55b45b
+OMR      - b58aa2708
+JCL      - d680e266ef4 based on jdk-17.0.4+8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.runtime.version==17.0.4+8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 user.name==matthew
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 path.separator==:
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 os.version==5.15.79.1-microsoft-standard-WSL2
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.runtime.name==IBM Semeru Runtime Open Edition
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 ibm.signalhandling.sigint==true
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 file.encoding==UTF-8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vm.name==Eclipse OpenJ9 VM
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vendor.version==17.0.4.0
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 ibm.signalhandling.sigchain==true
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vendor.url.bug==https://github.com/ibmruntimes/Semeru-Runtimes/issues
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.io.tmpdir==/tmp
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.version==17.0.4
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.system.agent.path==/home/matthew/.sdkman/candidates/java/17.0.4-sem/lib
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 user.dir==/home/matthew/github.com/osprey-photo/osprey-knockout
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 os.arch==amd64
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vm.specification.name==Java Virtual Machine Specification
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.awt.printerjob==sun.print.PSPrinterJob
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.util.logging.SimpleFormatter.format==%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$-6s %2$s %5$s%6$s%n
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.nio.PageAlignDirectMemory==false
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 app.home==MY_APP_HOME
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 os.encoding==UTF-8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 native.encoding==UTF-8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.library.path==/home/matthew/.sdkman/candidates/java/17.0.4-sem/lib/default:/home/matthew/.sdkman/candidates/java/17.0.4-sem/lib:/usr/lib64:/usr/lib
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vendor==IBM Corporation
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vm.info==JRE 17 Linux amd64-64-Bit Compressed References 20220719_256 (JIT enabled, AOT enabled)
+OpenJ9   - 04a55b45b
+OMR      - b58aa2708
+JCL      - d680e266ef4 based on jdk-17.0.4+8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.nio.MaxDirectMemorySize==-1
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.vm.version==openj9-0.33.0
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 com.ibm.jcl.checkClassPath==
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 ibm.system.encoding==UTF-8
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.lang.invoke.VarHandle.VAR_HANDLE_GUARDS==false
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 sun.io.unicode.encoding==UnicodeLittle
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout lambda$main$5 java.class.version==61.0
+2022-12-18 12:52:32 INFO   osprey.competition.Knockout start Knockout::Start >
+2022-12-18 12:52:42 INFO   osprey.competition.knockout.Model <init> Model <init>
+2022-12-18 12:52:42 INFO   osprey.competition.knockout.Model scanDirectory Reading images from src.image.dir

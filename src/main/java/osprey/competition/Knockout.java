@@ -1,3 +1,14 @@
+// Copyright 2018-2022 Matthew B White
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//     http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 package osprey.competition;
 
 import java.io.File;
@@ -56,14 +67,16 @@ public class Knockout extends Application {
 
 	@Override
 	public void start(Stage stage) {
-
+		log.info("Knockout::Start >");
 		// 5 pixels space between child nodes
 		VBox vb = new VBox();
 		vb.setPadding(new Insets(10, 50, 50, 50));
 		vb.setSpacing(20);
 		textArea = new TextFlow();
-		Label dirLabel = new Label("Step 1: Images");
-		dirLabel.setMinWidth(100);
+		Label dirLabel = new Label(
+			"Step 1: Images");
+		dirLabel.setMinWidth(120);
+		
 
 		DirectoryChooser directoryChooser = new DirectoryChooser();
 		String startingDir = "";//StateStore.getStateStore().getDataDir();
@@ -82,14 +95,14 @@ public class Knockout extends Application {
 		});
 
 		Label titleLabel = new Label("Step 2: Title");
-		titleLabel.setMinWidth(100);
+		titleLabel.setMinWidth(120);
 
 		String mainTitle = StateStore.getStateStore().getProperty("competition.title");
 		TextField titleField = new TextField(mainTitle);
 		titleField.setMinWidth(300);
 
 		Label loadLabel = new Label("Step 3: Check");
-		loadLabel.setMinWidth(100);
+		loadLabel.setMinWidth(120);
 		Button loadButton = new Button("Load and check images...");
 		loadButton.setMinWidth(300);
 		loadButton.setOnAction(e -> {
@@ -114,7 +127,7 @@ public class Knockout extends Application {
 		});
 
 		Label runLabel = new Label("Step 4: Compete");
-		runLabel.setMinWidth(100);
+		runLabel.setMinWidth(120);
 
 		Button runButton = new Button("Run competition...");
 		runButton.setMinWidth(300);
