@@ -1,5 +1,6 @@
 package osprey.competition.knockout;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import javafx.event.EventHandler;
@@ -7,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -93,7 +95,48 @@ public class ImageViewer implements Controller {
 		root.getChildren().add(bwps);
 		root.getChildren().add(chartTitle);
 		root.getChildren().add(subTitle);
+		GridPane grid= getGridBox();
+		VBox.setMargin(grid, new Insets(10, 10, 10, 10));
+		root.getChildren().add(grid);
+
 		return root;
+	}
+
+
+	public GridPane getGridBox(){
+
+        GridPane gridPane = new GridPane();
+		gridPane.setHgap(10);
+		gridPane.setVgap(10);
+		// ImageGrid ig = new ImageGrid<>();
+		ArrayList<Image> imgs = new ArrayList<Image>();
+
+		model.getNextRound().getList().forEach((c)->{
+			imgs.add(c.getImageOne().image);
+			imgs.add(c.getImageTwo().image);
+		});;
+
+		int rows =(int) Math.ceil(Math.sqrt(imgs.size()));
+		logger.info("Size = "+imgs.size()+" "+rows);
+		int row=0;
+		int column=0;
+		for (Image img : imgs){
+			if (column>rows){
+		 		column=0;
+		 		row++;
+		 	} else {
+				column++;
+			}
+
+			logger.info("C "+column+"    R "+row);
+			ImageView imageHouse = new ImageView(img);
+			imageHouse.autosize();
+			imageHouse.setPreserveRatio(true);
+			gridPane.add(new ImageViewPane(imageHouse),column,row);
+			
+		 }
+		
+		return gridPane;
 	}
 
 	public VBox getFullImageView() {
@@ -175,6 +218,7 @@ public class ImageViewer implements Controller {
 			
 			// scene.setFill(Color.BLACK);
 			scene.setRoot(getRoundTitle());
+			// scene.setRoot(getGridBox());
 
 			state = STATE.ROUND_TITLE;
 			stage.setFullScreen(true);
