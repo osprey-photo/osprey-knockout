@@ -1,3 +1,14 @@
+// Copyright 2018-2022 Matthew B White
+
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//     http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 package osprey.competition.knockout;
 
 import java.io.File;
@@ -7,7 +18,7 @@ import java.util.logging.Logger;
 import javafx.scene.image.Image;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
+
 import java.io.IOException;
  
 import javax.imageio.ImageIO;
@@ -59,8 +70,8 @@ public class ImageWrapper {
 		this.basename = filename.getName();
 		logger.info("Loading for "+filename);
 		FileInputStream fis = new FileInputStream(filename);
-		image = new Image(fis,1400,1050,true,false);
-		logger.info("loaded file "+filename);
+		image = new Image(fis,1400,1050,true,true);
+		logger.info("Loaded file "+filename);
 	}
 	
 	public String toString(){

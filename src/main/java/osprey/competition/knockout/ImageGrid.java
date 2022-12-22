@@ -1,3 +1,14 @@
+// Copyright 2018-2022 Matthew B White
+
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//     http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 package osprey.competition.knockout;
 
 import java.net.MalformedURLException;
@@ -13,14 +24,62 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 
 public class ImageGrid<T> extends GridPane {
 
-	public ImageGrid() {
+	public ImageGrid(Model model) {
 		super();
 		setFocusTraversable(true);
+
+		setHgap(10);
+		setVgap(10);
+
+		ArrayList<Image> imgs = new ArrayList<Image>();
+
+		model.getNextRound().getList().forEach((c)->{
+			imgs.add(c.getImageOne().image);
+			imgs.add(c.getImageTwo().image);
+		});;
+
+		double _s = Math.sqrt(imgs.size());
+		int columns =(int) Math.ceil(_s);
+		int rows =(int) Math.round(_s);
+		
+		setDimensions(columns,rows);
+		for (int j = 0; j < columns; j++) {
+			ColumnConstraints cc = new ColumnConstraints();
+			cc.setHgrow(Priority.ALWAYS);
+			getColumnConstraints().add(cc);
+		}
+
+		for (int j = 0; j < rows; j++) {
+			RowConstraints rc = new RowConstraints();
+			rc.setVgrow(Priority.ALWAYS);
+			getRowConstraints().add(rc);
+		}
+
+		int row=0;
+		int column=0;
+
+		for (Image img : imgs){
+			ImageView imageHouse = new ImageView(img);
+			imageHouse.setStyle("-fx-background-color: #000000FF");
+			imageHouse.setPreserveRatio(true);
+			add(new ImageViewPane(imageHouse),column,row);
+			
+			column++;
+			if (column>columns){
+				column=0;
+				row++;
+			} 
+		 }
+		
+
 	}
 	
 	private int columns = 0, rows = 0;
@@ -96,51 +155,8 @@ public class ImageGrid<T> extends GridPane {
 
 	private Map<Object, Image> images = new HashMap<Object, Image>();
 
-	private Image getImage(String imageUrl, Object... contexts) {
-		Image image = images.get(imageUrl);
-		if (image == null) {
-			URL url = null;
-			try {
-				url = new URL(imageUrl);
-			} catch (MalformedURLException e) {
-			}
-			int i = 0;
-			while (url == null && i < contexts.length) {
-				url = contexts[i++].getClass().getResource(imageUrl);
-			}
-			if (url == null) {
-				url = getClass().getResource(imageUrl);
-			}
-			if (url == null) {
-				try {
-					url = new URL("file:" + imageUrl);
-				} catch (MalformedURLException e) {
-				}
-			}
-			if (url != null) {
-				image = new Image(url.toExternalForm());
-				images.put(imageUrl, image);
-			}
-		}
-		return image;
-	}
-	
 	public void setImage(T imageKey, Image image) {
 		images.put(imageKey, image);
-	}
-
-	public void setImage(T imageKey, String imageUrl, Object... contexts) {
-		Image image = getImage(imageUrl, contexts);
-		if (image == null) {
-			imageException(imageUrl);
-		}
-		getImageKeyMap().put(imageKey, imageUrl);
-		images.put(imageUrl, image);
-		images.put(imageKey, image);
-	}
-
-	private void imageException(Object imageKey) {
-		throw new IllegalArgumentException("Couldn't get image for " + imageKey);
 	}
 
 	private String imageUrlFormat = null;
@@ -151,19 +167,6 @@ public class ImageGrid<T> extends GridPane {
 
 	public void setImageUrlFormat(String imageUrlFormat) {
 		this.imageUrlFormat = imageUrlFormat;
-	}
-	
-	private Image getImage(T imageKey) {
-		Image image = images.get(imageKey);
-		if (image == null && imageUrlFormat != null) {
-			String imageKey2 = imageUrlFormat.replace("${key}", String.valueOf(imageKey));
-			image = getImage(imageKey2);
-			if (image != null) {
-				images.put(imageKey, image);
-				images.put(imageKey2, image);
-			}
-		}
-		return image;
 	}
 
 	ImageView getImageView(T imageKey, int column, int row) {
@@ -192,7 +195,7 @@ public class ImageGrid<T> extends GridPane {
 	
 	public Image setImage(T imageKey, int column, int row) {
 		ImageView imageView = getImageView(imageKey, column, row);
-		Image image = getImage(imageKey);
+		Image image = images.get(imageKey);
 		imageView.setImage(image);
 		return image;
 	}

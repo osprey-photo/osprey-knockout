@@ -1,3 +1,14 @@
+// Copyright 2018-2022 Matthew B White
+
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//     http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 package osprey.competition.knockout;
 
 import java.io.File;
@@ -9,7 +20,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
+
 import java.util.logging.Logger;
 
 public class Model {
@@ -66,6 +77,8 @@ public class Model {
 		return this.currentCombatantsIndex;
 	}
 
+
+
 	public Round getNextRound() {
 		logger.info("> getNextRound");
 		round++;
@@ -80,21 +93,21 @@ public class Model {
 		return r;
 	}
 
-	private ArrayList<Combatants> getNextRoundImages() {
+	private ArrayList<Contestants> getNextRoundImages() {
 		logger.info("> getNextRoundImages ");
 		// scan the images and remove the ones that not selected
-		// need to clean out the failed images
+		// i.e. clean out the failed images
 		for (int count = images.size() - 1; count > 0; count--) {
 			if (!images.get(count).success) {
 				images.remove(count);
 			}
 		}
-		logger.info("image list size " + images.size());
+		logger.info("Images left " + images.size());
 
 		// mix things up a bits
 		Collections.shuffle(images);
 
-		ArrayList<Combatants> nextRounds = new ArrayList<>();
+		ArrayList<Contestants> nextRounds = new ArrayList<>();
 
 		// need to work out how many images to get in this round
 		int numberImages = images.size();
@@ -105,7 +118,7 @@ public class Model {
 		logger.info("number this round " + numberThisRound);
 		// loop over and get the correct set of images
 		for (int loop = 0; loop < numberThisRound; loop += 2) {
-			Combatants c = new Combatants(images.get(loop), images.get(loop + 1));
+			Contestants c = new Contestants(this, images.get(loop), images.get(loop + 1));
 			nextRounds.add(c);
 		}
 		logger.info("number in this new round is " + nextRounds.size());
@@ -120,9 +133,13 @@ public class Model {
 	 * Move to the next pair of images.
 	 * 
 	 */
-	public Combatants moveToNext() {
+	public Contestants moveToNext() {
 		this.currentCombatantsIndex++;
 		roundDone = ((currentCombatantsIndex + 1) == this.currentRound.getNumberCombatants());
+		return this.currentRound.get(this.currentCombatantsIndex);
+	}
+
+	public Contestants getCurrentContestants(){
 		return this.currentRound.get(this.currentCombatantsIndex);
 	}
 
