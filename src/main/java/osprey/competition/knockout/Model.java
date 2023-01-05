@@ -203,10 +203,12 @@ public class Model {
 
 				int i0 = f.indexOf(".");
 				int i1 = f.indexOf("_");
+				int i2 = f.indexOf("%");
 				i1 = (i1 == -1) ? f.indexOf("-") : i1;
+				i1 = (i1 == -1) ? i2 : i1;
 
 				if (i1 < 1) {
-					this.feedbackSupplier.accept("!! No _ or - in image file "+f);
+					this.feedbackSupplier.accept("!! No _ or - or % in image file "+f);
 					continue;
 				}
 				im.title = f.substring(i1 + 1, i0).trim();
