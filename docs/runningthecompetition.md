@@ -16,7 +16,7 @@ You'll need to explain the format of the competition if it's new to your club. W
 
 The primary aim is that this is fun - it was created to do after our AGM.  AGMs can 'dry' club evenings.
 
-Images need to JPGs, ideally around 1400 by 1050 pixels. Filenames should _photography name_ followed by _title_ Separated by _ (underscore) or - (dash)
+Images need to JPGs, ideally around 1400 by 1050 pixels. Filenames should _photography name_ followed by _title_ Separated by _ (underscore) or - (dash) or % (percent)
 
 ## Image preparation
 
